@@ -1,0 +1,98 @@
+{
+  "name": "order-flow",
+  "description": "订单自动流转工作流 —— 每 5 分钟轮询新订单，异常自动转售后管理",
+  "version": "1.0.0",
+  "enabled": true,
+  "tags": ["order", "polling", "aftersales", "realtime"],
+
+  "trigger": {
+    "type": "polling",
+    "intervalMs": 300000,
+    "maxRetries": 3,
+    "description": "每 5 分钟（300,000ms）执行一次订单轮询"
+  },
+
+  "steps": [
+    {
+      "id": "step-1-poll-orders",
+      "agent": "order-processor",
+      "action": "pollNewOrders",
+      "description": "拉取系统中所有待处理新订单",
+      "outputKey": "newOrders",
+      "onError": "retry",
+      "retryConfig": {
+        "maxRetries": 3,
+        "delayMs": 10000
+      },
+      "timeout": 30000
+    },
+    {
+      "id": "step-2-review-orders",
+      "agent": "order-processor",
+      "action": "reviewOrders",
+      "description": "批量审核新订单：校验支付、地址、风险评分",
+      "inputMapping": {
+        "orders": "{{step-1-poll-orders.output}}"
+      },
+      "outputKey": "reviewResult",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-3-handle-abnormal",
+      "agent": "order-processor",
+      "action": "handleAbnormalOrders",
+      "description": "处理审核中发现的异常订单",
+      "inputMapping": {
+        "abnormalOrders": "{{step-2-review-orders.output.abnormal}}"
+      },
+      "outputKey": "abnormalHandled",
+      "condition": "{{step-2-review-orders.output.abnormal}} > 0",
+      "onError": {
+        "forward": "aftersales-manager",
+        "action": "handleAbnormalOrder"
+      },
+      "timeout": 45000
+    },
+    {
+      "id": "step-4-forward-aftersales",
+      "agent": "aftersales-manager",
+      "action": "handleAbnormalOrder",
+      "description": "售后管理官接手无法自动处理的异常订单",
+      "inputMapping": {
+        "abnormalOrders": "{{step-3-handle-abnormal.output}}"
+      },
+      "outputKey": "aftersalesResult",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-5-track-logistics",
+      "agent": "order-processor",
+      "action": "trackLogistics",
+      "description": "追踪在途包裹状态，识别延迟预警",
+      "outputKey": "logisticsStatus",
+      "onError": "continue",
+      "timeout": 30000
+    },
+    {
+      "id": "step-6-check-inventory",
+      "agent": "inventory-guard",
+      "action": "monitorInventory",
+      "description": "订单消耗后检查库存健康，触发低库存预警",
+      "outputKey": "inventoryStatus",
+      "onError": "continue",
+      "timeout": 20000
+    }
+  ],
+
+  "onSuccess": {
+    "notify": ["order-processor"],
+    "action": "orderFlowCycleComplete"
+  },
+
+  "onFailure": {
+    "notify": ["order-processor", "aftersales-manager"],
+    "action": "orderFlowCycleFailed"
+  }
+}

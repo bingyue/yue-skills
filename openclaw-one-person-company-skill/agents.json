@@ -1,0 +1,340 @@
+{
+  "agents": [
+    {
+      "id": "ceo",
+      "name": "CEO",
+      "soul": "souls/ceo.md",
+      "center": "总办",
+      "role": "战略决策",
+      "kpi": "公司整体增长与盈利",
+      "center_node": true,
+      "description": "负责全局战略决策、资源分配、跨部门协调与最终裁决",
+      "permissions": ["read", "write", "delegate", "approve", "reject", "broadcast"],
+      "agentToAgent": {
+        "canCallAgents": [
+          "product_lead", "user_researcher", "data_analyst", "feature_planner", "ux_optimizer",
+          "tech_lead", "architect", "backend_dev", "frontend_dev", "qa_engineer", "devops_engineer",
+          "growth_lead", "content_planner", "seo_specialist", "ads_optimizer", "user_operator", "crm_analyst"
+        ],
+        "canBeCalledBy": [
+          "product_lead", "tech_lead", "growth_lead",
+          "user_researcher", "data_analyst", "feature_planner", "ux_optimizer",
+          "architect", "backend_dev", "frontend_dev", "qa_engineer", "devops_engineer",
+          "content_planner", "seo_specialist", "ads_optimizer", "user_operator", "crm_analyst"
+        ],
+        "priority": 1
+      },
+      "memory": { "enabled": true, "scope": "global", "persist": true },
+      "config": { "maxRecursion": 3, "responseFormat": "structured", "language": "zh-CN" }
+    },
+
+    {
+      "id": "product_lead",
+      "name": "产品负责人",
+      "soul": "souls/product_lead.md",
+      "center": "产品增长中心",
+      "role": "产品方向决策",
+      "kpi": "留存率",
+      "center_node": false,
+      "description": "统筹产品战略方向，协调产品中心各角色，向CEO汇报产品核心指标",
+      "permissions": ["read", "write", "delegate", "approve"],
+      "agentToAgent": {
+        "canCallAgents": ["ceo", "user_researcher", "data_analyst", "feature_planner", "ux_optimizer", "tech_lead", "growth_lead"],
+        "canBeCalledBy": ["ceo", "user_researcher", "data_analyst", "feature_planner", "ux_optimizer", "tech_lead", "growth_lead"],
+        "priority": 2
+      },
+      "memory": { "enabled": true, "scope": "product", "persist": true },
+      "config": { "maxRecursion": 3, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "user_researcher",
+      "name": "用户研究官",
+      "soul": "souls/user_researcher.md",
+      "center": "产品增长中心",
+      "role": "用户洞察",
+      "kpi": "需求准确率",
+      "center_node": false,
+      "description": "深度研究用户行为与需求，输出用户洞察报告，支撑产品与增长决策",
+      "permissions": ["read", "write"],
+      "agentToAgent": {
+        "canCallAgents": ["product_lead", "data_analyst", "feature_planner", "growth_lead"],
+        "canBeCalledBy": ["ceo", "product_lead", "data_analyst", "feature_planner", "ux_optimizer", "growth_lead", "crm_analyst"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "research", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "data_analyst",
+      "name": "数据分析师",
+      "soul": "souls/data_analyst.md",
+      "center": "产品增长中心",
+      "role": "数据洞察",
+      "kpi": "决策支持效率",
+      "center_node": false,
+      "description": "负责数据埋点设计、数据分析报告输出，为产品与增长决策提供数据依据",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["product_lead", "user_researcher", "growth_lead", "crm_analyst", "devops_engineer"],
+        "canBeCalledBy": ["ceo", "product_lead", "user_researcher", "feature_planner", "ux_optimizer", "tech_lead", "growth_lead", "ads_optimizer", "user_operator", "crm_analyst"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "data", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "feature_planner",
+      "name": "功能策划官",
+      "soul": "souls/feature_planner.md",
+      "center": "产品增长中心",
+      "role": "需求设计",
+      "kpi": "功能转化率",
+      "center_node": false,
+      "description": "将用户需求与商业目标转化为可执行的功能方案，输出PRD和验收标准",
+      "permissions": ["read", "write"],
+      "agentToAgent": {
+        "canCallAgents": ["product_lead", "user_researcher", "data_analyst", "ux_optimizer", "tech_lead"],
+        "canBeCalledBy": ["ceo", "product_lead", "user_researcher", "data_analyst", "ux_optimizer", "tech_lead", "backend_dev", "frontend_dev"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "product", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "ux_optimizer",
+      "name": "体验优化官",
+      "soul": "souls/ux_optimizer.md",
+      "center": "产品增长中心",
+      "role": "体验优化",
+      "kpi": "核心功能使用率",
+      "center_node": false,
+      "description": "负责产品交互设计与用户体验优化，提升核心流程转化率与功能使用率",
+      "permissions": ["read", "write"],
+      "agentToAgent": {
+        "canCallAgents": ["product_lead", "user_researcher", "data_analyst", "feature_planner", "frontend_dev"],
+        "canBeCalledBy": ["ceo", "product_lead", "user_researcher", "data_analyst", "feature_planner", "frontend_dev", "growth_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "product", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+
+    {
+      "id": "tech_lead",
+      "name": "技术负责人",
+      "soul": "souls/tech_lead.md",
+      "center": "技术平台中心",
+      "role": "技术决策",
+      "kpi": "系统稳定性",
+      "center_node": false,
+      "description": "统筹技术战略与工程方向，协调技术中心各角色，向CEO汇报技术状态",
+      "permissions": ["read", "write", "delegate", "execute", "approve"],
+      "agentToAgent": {
+        "canCallAgents": ["ceo", "product_lead", "growth_lead", "architect", "backend_dev", "frontend_dev", "qa_engineer", "devops_engineer"],
+        "canBeCalledBy": ["ceo", "product_lead", "growth_lead", "architect", "backend_dev", "frontend_dev", "qa_engineer", "devops_engineer"],
+        "priority": 2
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 3, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "architect",
+      "name": "系统架构师",
+      "soul": "souls/architect.md",
+      "center": "技术平台中心",
+      "role": "架构设计",
+      "kpi": "可扩展性",
+      "center_node": false,
+      "description": "负责系统架构设计、技术选型评估、架构演进规划与技术风险识别",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["tech_lead", "backend_dev", "frontend_dev", "devops_engineer", "feature_planner"],
+        "canBeCalledBy": ["ceo", "tech_lead", "backend_dev", "frontend_dev", "qa_engineer", "devops_engineer", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "backend_dev",
+      "name": "后端工程师",
+      "soul": "souls/backend_dev.md",
+      "center": "技术平台中心",
+      "role": "服务实现",
+      "kpi": "性能与稳定",
+      "center_node": false,
+      "description": "负责后端服务开发、API实现、数据库设计与性能优化",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["tech_lead", "architect", "frontend_dev", "qa_engineer", "devops_engineer", "feature_planner"],
+        "canBeCalledBy": ["tech_lead", "architect", "frontend_dev", "qa_engineer", "devops_engineer", "feature_planner", "data_analyst"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "frontend_dev",
+      "name": "前端工程师",
+      "soul": "souls/frontend_dev.md",
+      "center": "技术平台中心",
+      "role": "交互实现",
+      "kpi": "加载速度",
+      "center_node": false,
+      "description": "负责前端交互开发、页面性能优化与用户体验技术实现",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["tech_lead", "architect", "backend_dev", "qa_engineer", "ux_optimizer", "feature_planner"],
+        "canBeCalledBy": ["tech_lead", "architect", "backend_dev", "qa_engineer", "ux_optimizer", "feature_planner", "devops_engineer"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "qa_engineer",
+      "name": "QA测试官",
+      "soul": "souls/qa_engineer.md",
+      "center": "技术平台中心",
+      "role": "质量保障",
+      "kpi": "缺陷率",
+      "center_node": false,
+      "description": "负责测试策略制定、测试用例设计、自动化测试与质量门禁管理",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["tech_lead", "backend_dev", "frontend_dev", "devops_engineer", "feature_planner"],
+        "canBeCalledBy": ["tech_lead", "architect", "backend_dev", "frontend_dev", "devops_engineer", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "devops_engineer",
+      "name": "DevOps运维官",
+      "soul": "souls/devops_engineer.md",
+      "center": "技术平台中心",
+      "role": "部署与监控",
+      "kpi": "在线率",
+      "center_node": false,
+      "description": "负责CI/CD流水线、基础设施管理、系统监控告警与线上稳定性保障",
+      "permissions": ["read", "write", "execute", "deploy"],
+      "agentToAgent": {
+        "canCallAgents": ["tech_lead", "architect", "backend_dev", "frontend_dev", "qa_engineer"],
+        "canBeCalledBy": ["tech_lead", "architect", "backend_dev", "frontend_dev", "qa_engineer", "data_analyst"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "tech", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+
+    {
+      "id": "growth_lead",
+      "name": "增长负责人",
+      "soul": "souls/growth_lead.md",
+      "center": "营销增长中心",
+      "role": "增长策略",
+      "kpi": "MAU",
+      "center_node": false,
+      "description": "统筹增长战略与营销方向，协调增长中心各角色，向CEO汇报增长核心指标",
+      "permissions": ["read", "write", "delegate", "approve", "publish"],
+      "agentToAgent": {
+        "canCallAgents": ["ceo", "product_lead", "tech_lead", "content_planner", "seo_specialist", "ads_optimizer", "user_operator", "crm_analyst"],
+        "canBeCalledBy": ["ceo", "product_lead", "tech_lead", "content_planner", "seo_specialist", "ads_optimizer", "user_operator", "crm_analyst"],
+        "priority": 2
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 3, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "content_planner",
+      "name": "内容策划官",
+      "soul": "souls/content_planner.md",
+      "center": "营销增长中心",
+      "role": "内容增长",
+      "kpi": "内容转化率",
+      "center_node": false,
+      "description": "负责内容战略规划、选题策划、内容生产与内容转化效果优化",
+      "permissions": ["read", "write", "publish"],
+      "agentToAgent": {
+        "canCallAgents": ["growth_lead", "seo_specialist", "user_operator", "product_lead", "data_analyst"],
+        "canBeCalledBy": ["growth_lead", "seo_specialist", "ads_optimizer", "user_operator", "crm_analyst", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "seo_specialist",
+      "name": "SEO优化官",
+      "soul": "souls/seo_specialist.md",
+      "center": "营销增长中心",
+      "role": "搜索流量",
+      "kpi": "自然流量",
+      "center_node": false,
+      "description": "负责SEO策略制定、关键词规划、页面优化与自然搜索流量增长",
+      "permissions": ["read", "write", "publish"],
+      "agentToAgent": {
+        "canCallAgents": ["growth_lead", "content_planner", "frontend_dev", "data_analyst"],
+        "canBeCalledBy": ["growth_lead", "content_planner", "ads_optimizer", "data_analyst", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "ads_optimizer",
+      "name": "投放优化师",
+      "soul": "souls/ads_optimizer.md",
+      "center": "营销增长中心",
+      "role": "广告优化",
+      "kpi": "ROI",
+      "center_node": false,
+      "description": "负责付费广告策略、投放计划制定、创意优化与ROI最大化",
+      "permissions": ["read", "write", "publish"],
+      "agentToAgent": {
+        "canCallAgents": ["growth_lead", "content_planner", "data_analyst", "crm_analyst"],
+        "canBeCalledBy": ["growth_lead", "content_planner", "seo_specialist", "data_analyst", "crm_analyst"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "user_operator",
+      "name": "用户运营官",
+      "soul": "souls/user_operator.md",
+      "center": "营销增长中心",
+      "role": "用户活跃",
+      "kpi": "留存提升",
+      "center_node": false,
+      "description": "负责用户活跃度运营、社群管理、活动策划与用户留存提升",
+      "permissions": ["read", "write", "publish"],
+      "agentToAgent": {
+        "canCallAgents": ["growth_lead", "content_planner", "crm_analyst", "data_analyst", "product_lead"],
+        "canBeCalledBy": ["growth_lead", "content_planner", "crm_analyst", "data_analyst", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    },
+    {
+      "id": "crm_analyst",
+      "name": "CRM数据官",
+      "soul": "souls/crm_analyst.md",
+      "center": "营销增长中心",
+      "role": "用户分层",
+      "kpi": "复购率",
+      "center_node": false,
+      "description": "负责用户分层体系建设、生命周期管理、复购路径设计与CRM数据分析",
+      "permissions": ["read", "write", "execute"],
+      "agentToAgent": {
+        "canCallAgents": ["growth_lead", "data_analyst", "user_operator", "ads_optimizer", "content_planner"],
+        "canBeCalledBy": ["growth_lead", "data_analyst", "user_operator", "ads_optimizer", "content_planner", "product_lead"],
+        "priority": 3
+      },
+      "memory": { "enabled": true, "scope": "growth", "persist": true },
+      "config": { "maxRecursion": 2, "responseFormat": "structured", "language": "zh-CN" }
+    }
+  ]
+}

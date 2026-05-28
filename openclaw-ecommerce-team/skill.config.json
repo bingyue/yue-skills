@@ -1,0 +1,98 @@
+{
+  "skillName": "openclaw-ecommerce-team",
+  "version": "1.0.0",
+  "description": "电商运营团队 Skill，包含 10 个 AI Agent，支持自动工作流与 Agent-to-Agent 协作",
+  "author": "OpenClaw Team",
+  "license": "MIT",
+  "requiredOpenClawVersion": ">=2.0.0",
+  "autoRegisterAgents": true,
+  "enableAgentCollaboration": true,
+  "agentCollaboration": {
+    "enabled": true,
+    "maxDepth": 3,
+    "allowCrossAgentMessaging": true,
+    "broadcastEvents": true
+  },
+  "agents": [
+    {
+      "name": "traffic-strategist",
+      "path": "./src/agents/traffic-strategist/skill.ts",
+      "soul": "./src/agents/traffic-strategist/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "ads-optimizer",
+      "path": "./src/agents/ads-optimizer/skill.ts",
+      "soul": "./src/agents/ads-optimizer/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "content-marketer",
+      "path": "./src/agents/content-marketer/skill.ts",
+      "soul": "./src/agents/content-marketer/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "product-architect",
+      "path": "./src/agents/product-architect/skill.ts",
+      "soul": "./src/agents/product-architect/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "inventory-guard",
+      "path": "./src/agents/inventory-guard/skill.ts",
+      "soul": "./src/agents/inventory-guard/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "order-processor",
+      "path": "./src/agents/order-processor/skill.ts",
+      "soul": "./src/agents/order-processor/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "aftersales-manager",
+      "path": "./src/agents/aftersales-manager/skill.ts",
+      "soul": "./src/agents/aftersales-manager/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "customer-replier",
+      "path": "./src/agents/customer-replier/skill.ts",
+      "soul": "./src/agents/customer-replier/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "review-guardian",
+      "path": "./src/agents/review-guardian/skill.ts",
+      "soul": "./src/agents/review-guardian/Soul.md",
+      "autoLoad": true
+    },
+    {
+      "name": "data-director",
+      "path": "./src/agents/data-director/skill.ts",
+      "soul": "./src/agents/data-director/Soul.md",
+      "autoLoad": true
+    }
+  ],
+  "workflows": [
+    {
+      "name": "daily-report",
+      "path": "./src/workflows/daily-report.workflow.json",
+      "autoStart": true
+    },
+    {
+      "name": "order-flow",
+      "path": "./src/workflows/order-flow.workflow.json",
+      "autoStart": true
+    },
+    {
+      "name": "growth-cycle",
+      "path": "./src/workflows/growth-cycle.workflow.json",
+      "autoStart": true
+    }
+  ],
+  "entryPoint": "./src/index.ts",
+  "buildOutput": "./dist/index.js",
+  "tags": ["ecommerce", "agent-team", "workflow", "collaboration"]
+}

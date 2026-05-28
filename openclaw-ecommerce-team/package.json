@@ -1,0 +1,41 @@
+{
+  "name": "openclaw-ecommerce-team",
+  "version": "1.0.0",
+  "description": "OpenClaw 电商运营团队 Skill —— 包含 10 个 AI Agent，支持 Agent-to-Agent 协作与自动工作流",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "install:skill": "openclaw skill install .",
+    "register:agents": "node dist/index.js --register-agents",
+    "workflow:start": "node dist/index.js --start-workflows"
+  },
+  "keywords": [
+    "openclaw",
+    "skill",
+    "ecommerce",
+    "agent",
+    "ai",
+    "workflow"
+  ],
+  "author": "OpenClaw Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7",
+    "yaml": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.5"
+  }
+}

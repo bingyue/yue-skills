@@ -1,0 +1,8 @@
+{
+  "name": "danger-x-markdown-export-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "baoyu-chrome-cdp": "^0.1.0"
+  }
+}

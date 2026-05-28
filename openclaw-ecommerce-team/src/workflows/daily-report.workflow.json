@@ -1,0 +1,84 @@
+{
+  "name": "daily-report",
+  "description": "每日销售日报工作流 —— 每天 08:00 由 data-director 生成并分发销售日报",
+  "version": "1.0.0",
+  "enabled": true,
+  "tags": ["daily", "report", "data"],
+
+  "trigger": {
+    "type": "cron",
+    "expression": "0 8 * * *",
+    "timezone": "Asia/Shanghai",
+    "description": "每天北京时间 08:00 触发"
+  },
+
+  "steps": [
+    {
+      "id": "step-1-collect-data",
+      "agent": "data-director",
+      "action": "queryMetrics",
+      "description": "采集前一天全量销售指标数据",
+      "inputMapping": {
+        "metrics": ["GMV", "orderCount", "avgOrderValue", "newCustomers", "conversionRate", "refundRate", "DAU", "bounceRate"]
+      },
+      "outputKey": "rawMetrics",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-2-detect-anomaly",
+      "agent": "data-director",
+      "action": "detectDataAnomaly",
+      "description": "扫描数据异常，超出基线 20% 自动预警",
+      "outputKey": "anomalyReport",
+      "onError": "continue",
+      "timeout": 30000
+    },
+    {
+      "id": "step-3-generate-report",
+      "agent": "data-director",
+      "action": "generateDailyReport",
+      "description": "生成完整销售日报（含数据 + 洞察 + 建议）",
+      "inputMapping": {
+        "rawMetrics": "{{step-1-collect-data.output}}",
+        "anomalies": "{{step-2-detect-anomaly.output}}"
+      },
+      "outputKey": "dailyReport",
+      "onError": "stop",
+      "timeout": 120000
+    },
+    {
+      "id": "step-4-notify-traffic",
+      "agent": "traffic-strategist",
+      "action": "generateWeeklyInsight",
+      "description": "流量策略官读取日报，输出流量洞察",
+      "inputMapping": {
+        "report": "{{step-3-generate-report.output}}"
+      },
+      "outputKey": "trafficInsight",
+      "onError": "continue",
+      "timeout": 30000
+    },
+    {
+      "id": "step-5-send-notification",
+      "agent": "customer-replier",
+      "action": "sendOrderNotification",
+      "description": "（可选）向运营人员发送日报摘要通知",
+      "inputMapping": {
+        "reportSummary": "{{step-3-generate-report.output.summary}}"
+      },
+      "onError": "continue",
+      "timeout": 15000
+    }
+  ],
+
+  "onSuccess": {
+    "notify": ["data-director", "traffic-strategist"],
+    "action": "broadcastDailyReportReady"
+  },
+
+  "onFailure": {
+    "notify": ["data-director"],
+    "action": "alertReportGenerationFailed"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "name": "growth-cycle",
+  "description": "每周增长周期工作流 —— 流量分析 → 广告调整 → 内容素材更新，驱动持续增长",
+  "version": "1.0.0",
+  "enabled": true,
+  "tags": ["weekly", "growth", "traffic", "ads", "content"],
+
+  "trigger": {
+    "type": "cron",
+    "expression": "0 9 * * 1",
+    "timezone": "Asia/Shanghai",
+    "description": "每周一北京时间 09:00 触发"
+  },
+
+  "steps": [
+    {
+      "id": "step-1-weekly-report",
+      "agent": "data-director",
+      "action": "generateWeeklyReport",
+      "description": "生成上周完整数据周报，作为增长分析基础",
+      "outputKey": "weeklyReport",
+      "onError": "stop",
+      "timeout": 120000
+    },
+    {
+      "id": "step-2-traffic-analysis",
+      "agent": "traffic-strategist",
+      "action": "analyzeTraffic",
+      "description": "流量策略官深度分析上周流量来源、趋势与机会点",
+      "inputMapping": {
+        "weeklyData": "{{step-1-weekly-report.output}}"
+      },
+      "outputKey": "trafficAnalysis",
+      "onError": "continue",
+      "timeout": 90000
+    },
+    {
+      "id": "step-3-predict-trend",
+      "agent": "traffic-strategist",
+      "action": "predictTrend",
+      "description": "预测本周及未来 4 周流量趋势，为广告和内容提供方向",
+      "inputMapping": {
+        "trafficAnalysis": "{{step-2-traffic-analysis.output}}"
+      },
+      "outputKey": "trendPrediction",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-4-design-campaign",
+      "agent": "traffic-strategist",
+      "action": "designCampaign",
+      "description": "基于趋势预测，制定本周增长活动策略方案",
+      "inputMapping": {
+        "trend": "{{step-3-predict-trend.output}}",
+        "weeklyReport": "{{step-1-weekly-report.output}}"
+      },
+      "outputKey": "campaignPlan",
+      "onError": "continue",
+      "timeout": 90000
+    },
+    {
+      "id": "step-5-optimize-ads",
+      "agent": "ads-optimizer",
+      "action": "optimizeAdCampaign",
+      "description": "广告优化师根据流量分析和活动方案，优化广告策略",
+      "inputMapping": {
+        "trafficInsight": "{{step-2-traffic-analysis.output}}",
+        "campaignPlan": "{{step-4-design-campaign.output}}"
+      },
+      "outputKey": "adsOptimization",
+      "onError": "continue",
+      "timeout": 90000
+    },
+    {
+      "id": "step-6-reallocate-budget",
+      "agent": "ads-optimizer",
+      "action": "allocateBudget",
+      "description": "基于本周增长目标，重新分配广告预算",
+      "inputMapping": {
+        "optimization": "{{step-5-optimize-ads.output}}",
+        "campaignBudget": "{{step-4-design-campaign.output.strategy.budget}}"
+      },
+      "outputKey": "budgetAllocation",
+      "onError": "continue",
+      "timeout": 30000
+    },
+    {
+      "id": "step-7-plan-content",
+      "agent": "content-marketer",
+      "action": "planContentCalendar",
+      "description": "内容营销官制定本周内容日历，对齐流量趋势与活动节奏",
+      "inputMapping": {
+        "trafficTrend": "{{step-3-predict-trend.output}}",
+        "campaignPlan": "{{step-4-design-campaign.output}}"
+      },
+      "outputKey": "contentCalendar",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-8-update-materials",
+      "agent": "content-marketer",
+      "action": "updateMaterials",
+      "description": "更新广告素材库，为本周活动准备新创意素材",
+      "inputMapping": {
+        "adsRequirements": "{{step-5-optimize-ads.output}}",
+        "contentCalendar": "{{step-7-plan-content.output}}"
+      },
+      "outputKey": "materialUpdate",
+      "onError": "continue",
+      "timeout": 90000
+    },
+    {
+      "id": "step-9-optimize-seo",
+      "agent": "content-marketer",
+      "action": "optimizeSEO",
+      "description": "根据趋势关键词更新 SEO 内容优化策略",
+      "inputMapping": {
+        "keywords": "{{step-3-predict-trend.output.topKeywords}}"
+      },
+      "outputKey": "seoUpdate",
+      "onError": "continue",
+      "timeout": 45000
+    },
+    {
+      "id": "step-10-audit-products",
+      "agent": "product-architect",
+      "action": "auditSKUStructure",
+      "description": "同步审查商品结构，对齐本周增长活动的商品配置",
+      "outputKey": "skuAudit",
+      "onError": "continue",
+      "timeout": 60000
+    },
+    {
+      "id": "step-11-growth-summary",
+      "agent": "data-director",
+      "action": "forecastSalesTarget",
+      "description": "综合所有策略调整，预测本周销售目标可达率",
+      "inputMapping": {
+        "trafficPlan": "{{step-4-design-campaign.output}}",
+        "adsPlan": "{{step-5-optimize-ads.output}}",
+        "contentPlan": "{{step-7-plan-content.output}}"
+      },
+      "outputKey": "growthForecast",
+      "onError": "continue",
+      "timeout": 60000
+    }
+  ],
+
+  "onSuccess": {
+    "notify": ["traffic-strategist", "ads-optimizer", "content-marketer", "data-director"],
+    "action": "growthCycleComplete"
+  },
+
+  "onFailure": {
+    "notify": ["data-director"],
+    "action": "growthCycleFailed"
+  }
+}

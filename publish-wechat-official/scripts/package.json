@@ -1,0 +1,12 @@
+{
+  "name": "publish-wechat-official-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@jsquash/webp": "^1.5.0",
+    "baoyu-chrome-cdp": "^0.1.0",
+    "baoyu-md": "^0.1.0",
+    "jimp": "^1.6.0",
+    "socks": "^2.8.9"
+  }
+}

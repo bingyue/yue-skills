@@ -1,0 +1,25 @@
+{
+  "name": "openclaw-one-person-company",
+  "version": "1.0.0",
+  "description": "One person AI company skill — 自动注册 CEO / Product / Tech / Growth 四位 Agent，实现一人公司 AI 协作体系",
+  "author": "openclaw-opc",
+  "agents": "agents.json",
+  "soulsDir": "souls",
+  "entrypoint": "install.sh",
+  "requires": {
+    "agentToAgent": true,
+    "memory": true
+  },
+  "config": {
+    "maxRecursion": 3,
+    "agentToAgent": {
+      "enabled": true,
+      "allowCrossAgent": true,
+      "logCommunication": true
+    }
+  },
+  "hooks": {
+    "afterInstall": "echo '✅ openclaw-one-person-company skill installed'",
+    "beforeUninstall": "echo '⚠️  Uninstalling openclaw-one-person-company skill...'"
+  }
+}
