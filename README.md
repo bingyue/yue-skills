@@ -40,7 +40,8 @@ Yue Skills 是一个**可安装式 AI Agent 技能集合**，遵循 [AgentSkills
 
 - **84+ 顶层可安装 Skill**：每个目录根下均有 `SKILL.md`，可独立安装
 - **20+ 技能包（Bundle）**：包含多个子 Skill 的聚合包，按需取用
-- **场景全覆盖**：从选品→生图→写文案→发布→复盘，一条 AI 生产链路打通
+- **10 大场景分类**：电商 · 社媒 · 写作 · 视觉 · 视频 · 数据分析 · 音频播客 · PPT · 研究 · 增长 · 办公
+- **社区推荐**：每个分类附来自 GitHub 的高星真实仓库推荐（可直接安装）
 
 ---
 
@@ -161,8 +162,10 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | 仓库 | 说明 |
 |---|---|
-| [kaisdavis/claude-skills](https://github.com/kaisdavis/claude-skills) | `docs-update`（多文件文档同步）、`open-source-skill`（内部 Skill 公开化）等写作治理技能 |
-| [obra/superpowers](https://github.com/obra/superpowers) | 写作类 Skill 规范参考：包含 CSO（Claude Search Optimization）写作原则与测试框架 |
+| [avectats7/copy-that-sells](https://github.com/avectats7/copy-that-sells) | 广告文案写作（D&AD+Bly直效框架）：广告/落地页/邮件/宣言，含122个获奖案例参考，严格反AI痕迹层 |
+| [sociilabs/claude-content-writer](https://github.com/sociilabs/claude-content-writer) | 博客/LinkedIn/邮件专业写作，5阶段 GSD 流程，内置 SEO 优化 + 25项反AI写作审计 |
+| [pedronauck/skills](https://github.com/pedronauck/skills) | 140个精选技能集（75个原创），其中 `content-research-writer`/`copywriting`/`humanizer`/`writing-clearly-and-concisely` 直接可用 |
+| [kaisdavis/claude-skills](https://github.com/kaisdavis/claude-skills) | `docs-update`（会话结束自动同步多文档）、`open-source-skill`（内部文档公开化）写作治理工具 |
 
 ---
 
@@ -189,8 +192,10 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | 仓库 | 说明 |
 |---|---|
+| [b1rdmania/claude-brand-skills](https://github.com/b1rdmania/claude-brand-skills) | 品牌全流程开发（8阶段）：从品牌叙事→视觉方向→Logo开发→字形→设计系统→交付物，多模型图像生成 |
+| [op7418/logo-generator-skill](https://github.com/op7418/logo-generator-skill) | SVG Logo 生成器：6+种变体 + 12种专业展示背景（void/frosted/spotlight/iridescent 等），Nano Banana 渲染 |
+| [dancolta/gen-images-skill](https://github.com/dancolta/gen-images-skill) | 品牌感知图片生成：扫描 Tailwind/CSS 提取视觉标识，为网站缺失位置生成与品牌风格一致的图片 |
 | [EmmaStoneX/claude-design-skill](https://github.com/EmmaStoneX/claude-design-skill) | HTML 视觉设计专家（落地页/Deck/原型/动画/海报），来自 Claude.ai 内部 Design 系统提示词改编 |
-| [AgriciDaniel/claude-video](https://github.com/AgriciDaniel/claude-video) | 视频生产套件（含 `/video caption` Whisper 字幕 + ASS 动态字幕）的视觉输出部分 |
 
 ---
 
@@ -222,6 +227,41 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 ---
 
+### 📊 数据分析与可视化
+
+> CSV/Excel 数据到洞察报告，SQL 优化，A/B 测试，业务指标追踪。（**缺失方向，待补充本地 Skill**）
+
+*当前库内暂无专项 Skill，以下为 GitHub 热门推荐：*
+
+| 仓库 | Stars | 说明 |
+|---|---:|---|
+| [dongzhang84/data-analysis-skill](https://github.com/dongzhang84/data-analysis-skill) | — | 丢入 CSV/Excel 即得：多专家并行分析 → 交互式 HTML 报告 + PowerPoint 导出（含 KPI/图表/风险卡） |
+| [nimrodfisher/data-analytics-skills](https://github.com/nimrodfisher/data-analytics-skills) | — | 31 个数据分析技能：队列/漏斗/时序/A/B测试/根因/指标计算，全链路覆盖 |
+| [adityawrk/analytics-with-claude-code](https://github.com/adityawrk/analytics-with-claude-code) | — | 分析团队生产配置：`/eda`/`/sql-optimizer`/`/data-quality`/`/ab-test`/`/weekly-report` 等 10 个斜杠命令 |
+| [coffeefuelbump/csv-data-summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | — | 上传 CSV 即自动分析：统计+图表+洞察（电商/财务/运营/调研多行业自适应） |
+| [anthropics/skills xlsx](https://github.com/anthropics/skills/tree/main/document-skills) | ⭐ 1.4K | Anthropic 官方 xlsx 技能：操作 Excel 文件、公式、表格、图表 |
+
+**💡 建议优先迁移方向：** `ecom-data-dashboard`（电商数据看板）、`sales-funnel-analyzer`（销售漏斗分析）
+
+---
+
+### 🎙️ 音频与播客
+
+> 音频转录、播客生成、会议纪要，语音内容处理全链路。（**缺失方向，待补充本地 Skill**）
+
+*当前库内暂无专项 Skill，以下为 GitHub 热门推荐：*
+
+| 仓库 | Stars | 说明 |
+|---|---:|---|
+| [zarazhangrui/personalized-podcast](https://github.com/zarazhangrui/personalized-podcast) | ⭐ 313 | NotebookLM 同款体验：任意内容→双主持人 AI 播客 MP3，可订阅到 Apple Podcasts/Spotify/Overcast |
+| [soanseng/podcast-use](https://github.com/soanseng/podcast-use) | — | 播客编辑工作流：Groq Whisper 转录 → AI 剪辑 → SRT 字幕 → YouTube 视频 → 竖版 Reels + 封面生成 |
+| [terminator1333/claude-listen](https://github.com/terminator1333/claude-listen) | — | 本地会议转录（faster-whisper + pyannote 说话人分离），生成项目上下文感知会议纪要，完全离线 |
+| [sgasser/claude-skill-podcast](https://github.com/sgasser/claude-skill-podcast) | — | 零成本播客：浏览器 Web Speech API，无需 API Key，多语言，含互动播放器 |
+
+**💡 建议优先迁移方向：** `meeting-transcript-notes`（会议录音→纪要+待办）、`audio-to-article`（播客→文章）
+
+---
+
 ### 🎪 PPT 与演示文档
 
 > 从文档/报告自动生成演示文稿，覆盖 HTML PPT 到 AI 图片 PPT。
@@ -236,10 +276,12 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
-| 仓库 | 说明 |
-|---|---|
-| [EmmaStoneX/claude-design-skill](https://github.com/EmmaStoneX/claude-design-skill) | HTML Slide Deck 制作（来自 Claude.ai 内部设计系统，含 Deck 模板和布局参考） |
-| [openai/skills](https://github.com/openai/skills) | OpenAI 官方技能库（20K+ stars），含 `create-plan`、`gh-address-comments` 等可组合技能 |
+| 仓库 | Stars | 说明 |
+|---|---:|---|
+| [Akxan/ppt-agent-skill](https://github.com/akxan/ppt-agent-skill) | ⭐ 57 | 万元级 PPT 效果：26种风格 + 18种数据可视化（桑基/热力/甘特），输出 HTML + 可编辑矢量 PPTX |
+| [mrigankad/SlideArchitect](https://github.com/mrigankad/SlideArchitect) | — | 演示策略师：20+版式模板，专项适配投资人路演/销售 Deck/技术架构/培训课件 |
+| [daymade/claude-code-skills ppt-creator](https://github.com/daymade/claude-code-skills) | — | 带自动评分（<75分自动2次迭代）的演示稿生成，Marp + PPTX 双路输出 |
+| [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) | — | 学术会议/论文答辩 PPT 规范（动作标题/结构论证/引用标准/图表注释） |
 
 ---
 
@@ -263,8 +305,10 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | 仓库 | 说明 |
 |---|---|
-| [nexscope-ai/eCommerce-Skills](https://github.com/nexscope-ai/ecommerce-skills) 的 `brand-monitoring` | 品牌舆情追踪（Reddit/Google News/YouTube），含危机检测与情感分析 |
-| [AlirezaRezvani/claude-skills](https://github.com/AlirezaRezvani/claude-skills) | 综合技能库（13 平台兼容）：含研究、营销、SEO 工作流，533 个 CLI 脚本 |
+| [BexTuychiev/firecrawl-claude-code-skill](https://github.com/BexTuychiev/firecrawl-claude-code-skill) | Firecrawl 网页抓取：Markdown 提取/截图/结构化数据/网页搜索/文档整站爬取（支持 500+ 信用免费额度） |
+| [Cedriccmh/claude-code-skill-scrapling](https://github.com/Cedriccmh/claude-code-skill-scrapling) | 智能爬虫（自动选 Fetcher）：支持 Cloudflare/WAF 绕过、登录态会话、站点模式库 |
+| [webcpu/deep-research-skill](https://github.com/webcpu/deep-research-skill) | 并行多 Agent 深度研究：3-5 个 Opus Agent 并行搜索→合成→注明出处的 Markdown 报告 |
+| [pete-builds/claude-research-agent](https://github.com/pete-builds/claude-research-agent) | 反幻觉引文研究：严格引用纪律 + 置信度评估，输出 Markdown + 可分享 HTML（含 portable 版无需自建 MCP） |
 
 ---
 
@@ -327,8 +371,10 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | 仓库 | 说明 |
 |---|---|
-| [kaisdavis/claude-skills](https://github.com/kaisdavis/claude-skills) | `docs-update`（会话结束自动同步文档）、`context-md`（维护项目术语表）等工程治理技能 |
-| [BayHorseFurnace/r20-glebis-claude-skills-ecommerce](https://github.com/BayHorseFurnace/r20-glebis-claude-skills-ecommerce) | 电商 10 项专项命令（库存预测/RFM分群/购物车挽回/平台审计等） |
+| [thoniorf/pm-claude-skills](https://github.com/thoniorf/pm-claude-skills) | 多职能专业技能库：PM/工程/客户成功/营销/设计/法务/财务/HR/销售，含 Linear/Jira/Slack/Notion 对接模板 |
+| [dongzhang84/data-analysis-skill](https://github.com/dongzhang84/data-analysis-skill) | 端到端数据分析：多专家并行推理 → 交互式 HTML 报告（图表/洞察/风险卡）+ 一键 PPTX 导出 |
+| [nimrodfisher/data-analytics-skills](https://github.com/nimrodfisher/data-analytics-skills) | 31个数据分析技能包：队列分析/漏斗分析/时间序列/A/B测试/根因排查/业务指标计算 |
+| [adityawrk/analytics-with-claude-code](https://github.com/adityawrk/analytics-with-claude-code) | 分析团队生产级配置：`/eda`/`/sql-optimizer`/`/ab-test`/`/weekly-report` 等10个斜杠命令 |
 
 ---
 
@@ -395,15 +441,18 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 - [ ] 统一所有 Skill 的 `SKILL.md` 描述格式（中英双语 + 使用场景 + 依赖说明）
 - [ ] 为每个 Skill 添加 `examples/` 实战示例目录
 - [ ] 完善 wps-* 42 个技能的独立说明文档
-- [ ] 补充 ecom-details-image、ecom-product-image 的电商场景示例图
+- [ ] 补充 ecom-product-image 的电商场景示例图
 - [ ] 新增：`ecom-review-monitor`（电商评论舆情监控）
+- [ ] **新增 📊 数据分析方向**：`sales-funnel-analyzer`、`ecom-data-dashboard`、`csv-report-generator`
+- [ ] **新增 🎙️ 音频播客方向**：`meeting-transcript-notes`（会议录音→纪要）、`audio-to-article`（播客→文章）
 
 ### v0.3（规划中）
 
 - [ ] 中国合规体系：广告法/敏感词/医疗合规检查一体化 Skill
-- [ ] 私域运营系列：企业微信/群助手/朋友圈自动化
+- [ ] **私域运营系列**：企业微信自动化/群助手/朋友圈运营/SCRM 集成
 - [ ] B2B 内容营销套件：LinkedIn 文章 + 白皮书 + 案例故事
 - [ ] AI 视频评论区运营：自动回复/关键词监控/差评处理
+- [ ] **品牌视觉 AI 套件**：基于 `b1rdmania/claude-brand-skills` 汉化移植（8阶段全流程）
 - [ ] 多语言本地化：将核心 Skill 的提示词翻译为英/日/韩版本
 
 ### v1.0（长期目标）
@@ -412,6 +461,7 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 - [ ] 建立"Skill 组合模板"（按业务场景打包的一键安装套件）
 - [ ] 开放 Skill 投稿机制与质量审核 SOP
 - [ ] 与主流 Agent 平台（Coze/Dify/FastGPT）打通安装接口
+- [ ] **生态对接**：接入 [claudskills.com](https://claudskills.com) 公开目录（69K+ Skills 索引），提高可发现性
 
 ---
 
