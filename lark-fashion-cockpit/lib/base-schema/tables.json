@@ -1,0 +1,183 @@
+{
+  "base_app_name": "lark-fashion-cockpit 数据中枢",
+  "base_token": "LWsdbVtIaa2MaDsANm3cNdYgn1j",
+  "url": "https://my.feishu.cn/base/LWsdbVtIaa2MaDsANm3cNdYgn1j",
+  "time_zone": "Asia/Shanghai",
+  "_note": "本文件存放真实 token 仅供本仓库引用；用户使用本 Skill 时由 SKILL.md 引导 agent 在用户自己的飞书账号下创建多维表 App。",
+  "tables": [
+    {
+      "id": "tblrKzymnPPQ98ZX",
+      "name": "01_产品库",
+      "purpose": "产品 + SKU 颜色尺码库存的核心实体表",
+      "key_field": "款号",
+      "serves_capabilities": [5, 7, 14],
+      "key_fields_planned": ["款号", "名称", "SKU", "颜色", "尺码", "库存", "做货数", "已实销", "状态", "季节", "品类", "售价"]
+    },
+    {
+      "id": "tbll7UHbL6kDxZua",
+      "name": "02_4平台销售",
+      "purpose": "淘宝/抖音/小红书/视频号 日维度销售汇总",
+      "key_field": "记录",
+      "serves_capabilities": [1, 2, 10],
+      "key_fields_planned": ["日期", "平台", "GMV", "订单数", "UV", "转化率", "关联款"]
+    },
+    {
+      "id": "tblq2jhCQiRFeDXh",
+      "name": "03_库存预警",
+      "purpose": "低库存 SKU 巡检 + 平台库存分配",
+      "key_field": "SKU",
+      "serves_capabilities": [7],
+      "key_fields_planned": ["SKU", "当前库存", "安全线", "平台分配", "建议补货量", "紧急度", "更新日期"]
+    },
+    {
+      "id": "tblnXnsxZN0H0z3P",
+      "name": "04_上新波段",
+      "purpose": "上新批次规划与跟踪（企划→打样→拍摄→上架）",
+      "key_field": "波段名",
+      "serves_capabilities": [4, 6],
+      "key_fields_planned": ["波段名", "启动日期", "状态", "SKU列表", "负责人", "预计上架日"]
+    },
+    {
+      "id": "tblRnB14n1xW1vou",
+      "name": "05_任务清单",
+      "purpose": "跨部门任务管理（飞书任务的镜像 + 业务关联 + OKR 拆解承接）",
+      "key_field": "任务",
+      "serves_capabilities": [4, 6, 11, 14, 18],
+      "key_fields_planned": ["任务标题", "角色", "负责人", "截止日期", "优先级", "状态", "关联款", "所属波段", "所属OKR", "飞书任务ID"],
+      "views_planned": [
+        {"name": "本月团队总览", "type": "grid", "config": "按负责人分组 + 按截止日期排序 + 筛选当月"},
+        {"name": "我的待办", "type": "grid", "config": "筛选当前用户 + 状态!=已完成"},
+        {"name": "OKR拆解视图", "type": "grid", "config": "按所属OKR分组 + 按状态筛选"},
+        {"name": "上新波段拆解", "type": "kanban", "config": "按所属波段分列"}
+      ],
+      "_relations": ["双向关联 13_OKR", "双向关联 04_上新波段", "关联 01_产品库（关联款）"]
+    },
+    {
+      "id": "tblTlCI2hQ7o1kr8",
+      "name": "06_选题池",
+      "purpose": "从市场内容监控中筛选出的高分选题（独立于市场监控，避免数据混淆）",
+      "key_field": "选题",
+      "serves_capabilities": [9, 11],
+      "key_fields_planned": ["选题标题", "来源监控ID", "AI分数", "视频类型", "关联款", "阶段", "负责人", "创建日期"]
+    },
+    {
+      "id": "tblBAJCOKKnMgUrQ",
+      "name": "07_文案库",
+      "purpose": "AI 生成的多平台文案（仅讲解类视频会进入此表，穿搭类不需要文案）",
+      "key_field": "标题",
+      "serves_capabilities": [11],
+      "key_fields_planned": ["标题", "选题ID", "平台", "钩子", "正文", "状态", "创建日期"]
+    },
+    {
+      "id": "tblAuzO7UsdjlXyL",
+      "name": "08_直播排期",
+      "purpose": "直播日程与主推产品",
+      "key_field": "排期",
+      "serves_capabilities": [12],
+      "key_fields_planned": ["日期", "主播", "主推款", "预估GMV", "实际GMV", "直播间链接"]
+    },
+    {
+      "id": "tblePNIIcpUvTPLp",
+      "name": "09_生产档案",
+      "purpose": "工厂生产进度与供应商档案",
+      "key_field": "生产单",
+      "serves_capabilities": [14],
+      "key_fields_planned": ["生产单号", "工厂", "在做款", "进度", "交期", "数量", "成品率", "状态"]
+    },
+    {
+      "id": "tblMTkWGlIlnTcMA",
+      "name": "10_客户分层",
+      "purpose": "私域客户运营",
+      "key_field": "客户",
+      "serves_capabilities": [13],
+      "key_fields_planned": ["客户ID", "层级", "来源平台", "复购次数", "客单", "总贡献", "运营动作"]
+    },
+    {
+      "id": "tblCwJGr0HTMFtXD",
+      "name": "11_退货反馈",
+      "purpose": "退货原因与商品反馈",
+      "key_field": "订单号",
+      "serves_capabilities": [8],
+      "key_fields_planned": ["订单号", "退货原因", "SKU", "客户原话", "处理状态", "退货日期"]
+    },
+    {
+      "id": "tblAhs8thFobg1dx",
+      "name": "12_竞品博主库",
+      "purpose": "竞品博主信息库（专管博主基础信息，跟产品监控分开）",
+      "key_field": "博主名",
+      "serves_capabilities": [9],
+      "key_fields_planned": ["博主名", "平台", "粉丝数", "更新频率", "主打风格", "客单价区间", "监控状态"]
+    },
+    {
+      "id": "tbl0tdusQ2fw98wZ",
+      "name": "13_OKR",
+      "purpose": "公司/部门/个人 OKR 目标拆解（与任务清单双向关联，OKR 拆出的具体任务在任务清单跟进）",
+      "key_field": "OKR标题",
+      "serves_capabilities": [18],
+      "key_fields_planned": ["OKR标题", "周期", "Objective", "KR列表", "进度", "负责人", "部门", "拆解任务"],
+      "_relations": ["双向关联 05_任务清单"]
+    },
+    {
+      "id": "tblAxWcmHnFl0qUE",
+      "name": "14_审批记录",
+      "purpose": "审批流程记录",
+      "key_field": "审批标题",
+      "serves_capabilities": [19],
+      "key_fields_planned": ["审批标题", "类型", "金额", "申请人", "审批人", "状态", "创建日期", "完成日期"]
+    },
+    {
+      "id": "tblW888G2M8KMgZk",
+      "name": "15_市场内容监控",
+      "purpose": "热榜 + 博主视频内容数据监控（AI 评分推荐二创；穿搭类只推荐二创不写文案，讲解类推荐二创+文案）",
+      "key_field": "ID",
+      "serves_capabilities": [9, 11],
+      "key_fields_planned": ["来源", "博主名", "视频标题", "平台", "发布时间", "播放量", "点赞", "评论", "转发", "AI分数", "视频类型", "推荐操作", "状态", "进入选题池ID"],
+      "_field_options": {
+        "来源": ["热榜", "博主视频"],
+        "平台": ["抖音", "小红书", "视频号", "微博"],
+        "视频类型": ["穿搭", "讲解", "测评", "生活", "其他"],
+        "推荐操作": ["仅二创", "二创+文案", "不推荐"],
+        "状态": ["待处理", "已加入选题池", "已忽略"]
+      }
+    },
+    {
+      "id": "tblq1dZ4JNX7LPQI",
+      "name": "16_竞品产品监控",
+      "purpose": "竞品品牌的产品+价格+销量数据监控",
+      "key_field": "ID",
+      "serves_capabilities": [9],
+      "key_fields_planned": ["竞品品牌", "平台", "产品名", "SKU", "价格", "近7天销量", "评分", "评论数", "上架时间", "我们的对标款", "卖点提炼", "更新日期"]
+    },
+    {
+      "id": "tblHZAHcOzkcD4gC",
+      "name": "17_产品搭配组",
+      "purpose": "产品搭配推荐（人工锁定 + AI 推荐 + 历史成交，含库存倾斜清老货）",
+      "key_field": "搭配组名",
+      "serves_capabilities": [20],
+      "key_fields_planned": ["搭配组名", "主推款", "搭配款", "来源", "使用次数"],
+      "_relations": ["双向关联 01_产品库（主推款 / 搭配款）"]
+    }
+  ],
+  "_capability_id_map": {
+    "1": "经营晨报",
+    "2": "目标进度追踪",
+    "3": "利润财务分析",
+    "4": "跨部门任务协同",
+    "5": "产品库+8维详情",
+    "6": "商品企划上新波段",
+    "7": "库存补货决策",
+    "8": "评价退货分析",
+    "9": "竞品+趋势监控（含市场内容监控+竞品产品监控+竞品博主库）",
+    "10": "多平台数据分析",
+    "11": "内容创作5阶段流转",
+    "12": "营销直播管理",
+    "13": "私域+服务体验",
+    "14": "生产+供应商管理",
+    "15": "订单履约+物流",
+    "16": "公司知识库",
+    "17": "经营复盘会工作流",
+    "18": "OKR目标拆解",
+    "19": "审批流程自动化",
+    "20": "产品搭配推荐（库存倾斜清老货）"
+  }
+}

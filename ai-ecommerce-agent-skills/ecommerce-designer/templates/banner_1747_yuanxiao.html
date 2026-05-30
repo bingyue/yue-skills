@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1747 元宵节春季上新</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Manrope:wght@400;600;800&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: "Noto Sans SC", "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C44569 30%, #F8B500 70%, #FFD93D 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* 装饰圆形 */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+        .c1 { width: 400px; height: 400px; background: #fff; top: -100px; right: -100px; }
+        .c2 { width: 300px; height: 300px; background: #fff; bottom: -80px; left: -80px; }
+        .c3 { width: 200px; height: 200px; background: #fff; top: 50%; left: 10%; transform: translateY(-50%); }
+        
+        /* 品牌名 */
+        .brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        /* 主标题 */
+        .main-title {
+            font-size: 88px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.2);
+            letter-spacing: -2px;
+        }
+        
+        /* 副标题 */
+        .subtitle {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 40px;
+        }
+        
+        /* 折扣标签 */
+        .discount-box {
+            background: linear-gradient(135deg, #FF1744 0%, #FF6B35 100%);
+            padding: 24px 60px;
+            border-radius: 100px;
+            box-shadow: 0 10px 40px rgba(255,23,68,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .discount-text {
+            font-size: 48px;
+            font-weight: 900;
+            color: #fff;
+        }
+        
+        .discount-sub {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+        }
+        
+        /* 装饰元素 - 灯笼 */
+        .lantern {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite;
+        }
+        .l1 { top: 15%; left: 8%; animation-delay: 0s; }
+        .l2 { top: 20%; right: 12%; animation-delay: 1s; }
+        .l3 { bottom: 25%; left: 15%; animation-delay: 2s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* 日期 */
+        .date {
+            position: absolute;
+            bottom: 30px;
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+        
+        <div class="lantern l1">🏮</div>
+        <div class="lantern l2">🏮</div>
+        <div class="lantern l3">🏮</div>
+        
+        <div class="brand">1747</div>
+        
+        <h1 class="main-title">元宵节 × 春季上新</h1>
+        
+        <p class="subtitle">潮流新装 点亮新学期</p>
+        
+        <div class="discount-box">
+            <span class="discount-text">全场8折</span>
+            <span class="discount-sub">限时特惠</span>
+        </div>
+        
+        <div class="date">活动时间：2.28 - 3.5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+{
+  "title": "HubSpot CRM 线索管理内容 GEO 改造测试报告",
+  "checks": [
+    {
+      "format": "markdown",
+      "path": "skills/yao-geo-content-refiner/examples/hubspot-cn-demo/hubspot-cn-geo-content-refiner-report.md",
+      "exists": true,
+      "bytes": 30975
+    },
+    {
+      "format": "html",
+      "path": "skills/yao-geo-content-refiner/examples/hubspot-cn-demo/hubspot-cn-geo-content-refiner-report.html",
+      "exists": true,
+      "bytes": 40881
+    },
+    {
+      "format": "docx",
+      "path": "skills/yao-geo-content-refiner/examples/hubspot-cn-demo/hubspot-cn-geo-content-refiner-report.docx",
+      "exists": true,
+      "bytes": 58379
+    },
+    {
+      "format": "pdf",
+      "path": "skills/yao-geo-content-refiner/examples/hubspot-cn-demo/hubspot-cn-geo-content-refiner-report.pdf",
+      "exists": true,
+      "bytes": 49492
+    }
+  ],
+  "module_checks": [
+    {
+      "module": "报告摘要",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "分析完整性总览",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "真实数据获取与核验计划",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "原文 GEO 评分",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "GEO 改造版文章",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "改造前后差异报告",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "原子事实卡",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "FAQ 与同义问法",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "语义与实体地图",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "平台适配矩阵",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "理论依据与改造映射",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "证据强度与缺口",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "页面发布版 HTML 建议",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "发布与追踪建议",
+      "in_markdown": true,
+      "in_html": true
+    },
+    {
+      "module": "自 Review 结果",
+      "in_markdown": true,
+      "in_html": true
+    }
+  ],
+  "data_section_checks": [
+    {
+      "key": "completeness_map",
+      "rows": 9,
+      "present": true
+    },
+    {
+      "key": "data_access_plan",
+      "rows": 6,
+      "present": true
+    },
+    {
+      "key": "source_access_log",
+      "rows": 6,
+      "present": true
+    },
+    {
+      "key": "scorecard",
+      "rows": 8,
+      "present": true
+    },
+    {
+      "key": "diff_report",
+      "rows": 6,
+      "present": true
+    },
+    {
+      "key": "fact_cards",
+      "rows": 9,
+      "present": true
+    },
+    {
+      "key": "faq",
+      "rows": 6,
+      "present": true
+    },
+    {
+      "key": "semantic_entity_map",
+      "rows": 6,
+      "present": true
+    },
+    {
+      "key": "platform_matrix",
+      "rows": 5,
+      "present": true
+    },
+    {
+      "key": "research_alignment",
+      "rows": 7,
+      "present": true
+    },
+    {
+      "key": "sources",
+      "rows": 12,
+      "present": true
+    },
+    {
+      "key": "publishing_plan",
+      "rows": 4,
+      "present": true
+    },
+    {
+      "key": "measurement_plan",
+      "rows": 4,
+      "present": true
+    },
+    {
+      "key": "self_review",
+      "rows": 10,
+      "present": true
+    }
+  ],
+  "layout_profile": "kami-editorial-white-fixed-width-docx-wide-table-cards-sticky-html-nav",
+  "layout_logic": {
+    "docx_orientation": "landscape",
+    "docx_table_width_dxa": 15260,
+    "wide_table_rule": "Word/PDF 中超过 4 列的表格自动转纵向事实卡",
+    "url_wrapping": "Word/PDF 中长 URL 强制可换行",
+    "html_navigation": "HTML 报告使用 sticky 菜单栏，滚动时固定跟随",
+    "kami_adaptation": "保留白底，采用 kami 的墨蓝强调、serif 标题、暖灰边框、紧凑行距和无 rgba 打印安全规则"
+  },
+  "html_layout": {
+    "sticky_nav_present": true,
+    "nav_anchor_count": 16,
+    "section_anchor_count": 16,
+    "kami_tokens_present": true
+  },
+  "docx_layout": {
+    "status": "pass",
+    "orientation": "landscape",
+    "usable_width_dxa": 15308,
+    "table_count": 63,
+    "max_table_width_dxa": 15260,
+    "min_right_margin_dxa": 48,
+    "overflow_tables": []
+  },
+  "problems": [],
+  "status": "pass"
+}

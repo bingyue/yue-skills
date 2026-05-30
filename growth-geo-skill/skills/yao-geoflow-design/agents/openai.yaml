@@ -1,0 +1,10 @@
+# Copyright © 2026 姚金刚. All rights reserved.
+# Project: yao-geoflow-design
+# Created by: 姚金刚
+# Date: 2026-05-16
+# X: https://x.com/yaojingang
+
+interface:
+  display_name: "Yao GEOFlow Design"
+  short_description: "Discover GEOFlow Laravel Blade themes and run preview-first theme edits"
+  default_prompt: "Inspect the GEOFlow Laravel Blade theme system, discover existing themes, choose edit_theme, clone, or hybrid mode, and keep all frontend changes in a preview-first workflow without breaking SEO/schema, markdown rendering, image, footer, or route contracts."

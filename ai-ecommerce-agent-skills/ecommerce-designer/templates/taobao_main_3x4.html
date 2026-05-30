@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1747 主图 3:4 竖版</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Noto Sans SC", sans-serif; }
+        
+        .main-image {
+            width: 750px;
+            height: 1000px;
+            position: relative;
+            background: linear-gradient(180deg, #F5E6D3 0%, #E8D4C4 100%);
+            overflow: hidden;
+        }
+        
+        /* 顶部标题区 */
+        .header {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #8B7355;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .event-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #3D2914;
+            margin-bottom: 8px;
+        }
+        
+        .discount-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF1744 0%, #FF6B35 100%);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 28px;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(255,23,68,0.3);
+        }
+        
+        /* 模特主体 */
+        .model-container {
+            position: absolute;
+            top: 180px;
+            left: 0;
+            right: 0;
+            bottom: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .model-img {
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.2));
+        }
+        
+        /* 底部 */
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .tagline {
+            font-size: 22px;
+            color: #6B4423;
+            font-weight: 500;
+        }
+        
+        .date {
+            font-size: 16px;
+            color: #8B7355;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-image">
+        <div class="header">
+            <div class="brand">1747</div>
+            <div class="event-title">元宵上新</div>
+            <div class="discount-pill">全场8折</div>
+        </div>
+        
+        <div class="model-container">
+            <img src="file:///root/.openclaw/workspace/model.jpg" class="model-img" alt="model">
+        </div>
+        
+        <div class="footer">
+            <div class="tagline">潮流新装 点亮新学期</div>
+            <div class="date">2.28 - 3.5</div>
+        </div>
+    </div>
+</body>
+</html>

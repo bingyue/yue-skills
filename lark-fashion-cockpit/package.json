@@ -1,0 +1,58 @@
+{
+  "name": "lark-fashion-cockpit",
+  "version": "1.0.0",
+  "description": "女装运营驾驶舱 — 飞书 CLI 创作者大赛参赛作品。一个大 skill 包含 32 个独立 sub-skill，覆盖商品/直播/选款/客服/团队/AI 数字员工全链路。基于 lark-cli + 多模态 AI（豆包/DeepSeek）+ 飞书 OpenAPI",
+  "keywords": [
+    "lark-cli",
+    "feishu",
+    "fashion",
+    "ecommerce",
+    "ai-agent",
+    "skill",
+    "cockpit",
+    "douyin",
+    "运营驾驶舱",
+    "女装",
+    "电商",
+    "AI数字员工"
+  ],
+  "author": "fxl1209739475 (女装运营 / lark-cli 创作者大赛)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxl1209739475-fxl/lark-fashion-cockpit.git"
+  },
+  "homepage": "https://github.com/fxl1209739475-fxl/lark-fashion-cockpit",
+  "bugs": {
+    "url": "https://github.com/fxl1209739475-fxl/lark-fashion-cockpit/issues"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "skills/",
+    "docs/",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "init-cockpit": "node scripts/init-cockpit.js",
+    "list-skills": "ls skills/"
+  },
+  "peerDependencies": {
+    "@larksuite/cli": ">=1.0.20"
+  },
+  "skills": {
+    "directory": "skills/",
+    "count": 35,
+    "categories": {
+      "入口层": ["omnitask-bridge", "natural-language-router", "multi-user-private-channels"],
+      "经营数据": ["product-library", "product-matching", "base-extension-product-matcher", "stock-replenishment", "platform-analytics", "profit-analysis", "launch-decision", "new-launch-planning", "production-supplier"],
+      "跨平台 IM": ["im-collector", "im-broadcaster"],
+      "内容营销": ["blogger-monitor", "competitor-monitor", "content-pipeline", "live-streaming", "private-domain"],
+      "任务协作": ["task-collaboration", "task-lifecycle", "approval-flow", "okr-cascade", "morning-report", "personal-mirror", "meeting-broadcaster", "meeting-clip-extractor", "feedback-returns", "helpdesk-customer-tickets"],
+      "AI 大脑+基础设施": ["boss-clone-aily", "auto-scheduler", "knowledge-base", "lingo-fashion-glossary", "opensource-radar", "event-router"]
+    }
+  }
+}

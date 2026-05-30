@@ -1,0 +1,48 @@
+{
+  "skill": "video-storyboard-gen-skill",
+  "version": "2.0.0",
+  "evaluations": [
+    {
+      "id": "structure-test",
+      "name": "故事结构测试",
+      "description": "测试分镜脚本是否有清晰的故事结构",
+      "criteria": "必须有明确的三幕式或广告式结构，包含开场、发展、高潮、结尾",
+      "weight": 0.2
+    },
+    {
+      "id": "shot-detail-test",
+      "name": "镜头细节测试",
+      "description": "测试每个镜头是否有完整的细节描述",
+      "criteria": "每个镜头必须包含：景别、画面描述、运镜、时长",
+      "weight": 0.2
+    },
+    {
+      "id": "visual-description-test",
+      "name": "画面描述精细度测试",
+      "description": "测试画面描述是否精细可执行",
+      "criteria": "画面描述必须包含人物外观、场景环境、光线、色彩等维度",
+      "weight": 0.2
+    },
+    {
+      "id": "camera-work-test",
+      "name": "镜头语言测试",
+      "description": "测试镜头语言运用是否合理",
+      "criteria": "景别变化有节奏，运镜有目的性，避免连续相同景别",
+      "weight": 0.15
+    },
+    {
+      "id": "audio-design-test",
+      "name": "声音设计测试",
+      "description": "测试是否有完整的声音设计",
+      "criteria": "包含台词/旁白、音效、背景音乐情绪",
+      "weight": 0.15
+    },
+    {
+      "id": "edit-point-test",
+      "name": "剪辑点测试",
+      "description": "测试是否有明确的剪辑点和转场",
+      "criteria": "每个镜头有入点、出点、转场方式",
+      "weight": 0.1
+    }
+  ]
+}

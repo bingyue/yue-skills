@@ -1,0 +1,326 @@
+{
+  "research_date": "2026-01-24",
+  "data_sources": [
+    "CNET - Best Tested Portable Power Stations in 2026",
+    "OutdoorGearLab - The Best Power Stations of 2026"
+  ],
+  "brands": {
+    "Jackery": {
+      "market_position": "Market Leader",
+      "product_range": "Entry to High-end",
+      "specialization": "Camping, Outdoor, General Use",
+      "key_products": [
+        {
+          "model": "Explorer 2000 Plus",
+          "category": "Premium/Large",
+          "capacity_wh": 2042,
+          "output_watts": 2200,
+          "weight_lbs": 61.5,
+          "price_usd": 2199,
+          "sale_price_usd": 1099,
+          "rating": "Best Overall",
+          "features": [
+            "Expandable battery capacity",
+            "Wireless charging",
+            "LiFePO4 battery",
+            "Fast AC and solar charging",
+            "Compatible with solar panels"
+          ],
+          "best_for": "Large capacity needs, extended power outages, RV camping",
+          "pros": [
+            "Highest expandability",
+            "Excellent build quality",
+            "Fast charging",
+            "Long battery life with LiFePO4"
+          ],
+          "cons": [
+            "Heavy at 61.5 lbs",
+            "Premium price point",
+            "Overkill for small devices"
+          ]
+        },
+        {
+          "model": "Explorer 2000 v2",
+          "capacity_wh": 1710,
+          "output_watts": 2200,
+          "weight_lbs": 39,
+          "price_usd": 800,
+          "rating": 81,
+          "award": "Best for Off-grid Camping",
+          "features": [
+            "Large capacity",
+            "2200W output",
+            "Solar compatible",
+            "Lighter than Plus version"
+          ],
+          "best_for": "Multi-day off-grid camping, extended blackouts"
+        },
+        {
+          "model": "Explorer 1000 Plus",
+          "capacity_wh": 1077,
+          "output_watts": 2000,
+          "price_usd": 599,
+          "rating": "Best Versatile",
+          "features": [
+            "Modular design",
+            "Expandable",
+            "LiFePO4 battery",
+            "Fast charging"
+          ],
+          "best_for": "Serious power needs, modular setup"
+        },
+        {
+          "model": "Explorer 300",
+          "capacity_wh": 293,
+          "measured_wh": 260,
+          "output_watts": 300,
+          "price_usd": null,
+          "rating": 52,
+          "award": "Best Buy Award",
+          "features": [
+            "Lightweight",
+            "Portable",
+            "Low-wattage device support"
+          ],
+          "best_for": "Phone and laptop charging, small devices"
+        }
+      ]
+    },
+    "EcoFlow": {
+      "market_position": "Innovation Leader",
+      "product_range": "Mid to High-end",
+      "specialization": "Fast Charging, Home Backup, Smart Features",
+      "key_products": [
+        {
+          "model": "DELTA Pro 3",
+          "capacity_wh": 4096,
+          "measured_wh": 3790,
+          "output_watts": 4000,
+          "expandable_to_kwh": 48,
+          "solar_input_watts": 2600,
+          "price_usd": null,
+          "rating": 81,
+          "award": "Best for Home Backup",
+          "features": [
+            "Home backup integration",
+            "Expandable to 48 kWh",
+            "4000W output",
+            "Direct home wiring",
+            "Transfer switch compatible"
+          ],
+          "best_for": "Whole home backup, high-wattage appliances, extended outages"
+        },
+        {
+          "model": "River 3",
+          "capacity_wh": 286,
+          "price_usd": null,
+          "award": "Best Small Portable Power Station",
+          "features": [
+            "UPS capability",
+            "Ultra-portable",
+            "Fast charging",
+            "Double battery life for <100W devices",
+            "<20ms switchover time"
+          ],
+          "best_for": "Small devices, emergency backup, portability"
+        },
+        {
+          "model": "River 2 Pro",
+          "capacity_wh": null,
+          "price_usd": null,
+          "rating": 61,
+          "features": ["Compact", "Affordable"]
+        }
+      ],
+      "innovations": [
+        "AI assistant integration",
+        "Fast charging technology",
+        "Smart home integration"
+      ]
+    },
+    "Bluetti": {
+      "market_position": "Fast Charging Specialist",
+      "product_range": "Mid to High-end",
+      "specialization": "Fast Charging, Value",
+      "key_products": [
+        {
+          "model": "AC70",
+          "capacity_wh": 768,
+          "usable_capacity_percent": 93,
+          "output_watts": 1000,
+          "peak_watts": 2000,
+          "charge_time_80_percent": "45 minutes",
+          "price_usd": 369,
+          "regular_price_usd": 329,
+          "award": "Best Fast Charging Portable Power Station",
+          "features": [
+            "Ultra-fast charging (80% in 45 min)",
+            "Power Lifting Mode",
+            "High usable capacity (93%)",
+            "Portable design"
+          ],
+          "best_for": "Quick recharges, variable power needs, resistive appliances"
+        },
+        {
+          "model": "AC180",
+          "capacity_wh": null,
+          "price_usd": null,
+          "rating": 66
+        },
+        {
+          "model": "Elite 100 V2",
+          "capacity_wh": 1024,
+          "award": "Best Value"
+        }
+      ]
+    },
+    "Anker": {
+      "market_position": "Technology Innovator",
+      "product_range": "Mid to High-end",
+      "specialization": "Fast Charging, Portability",
+      "key_products": [
+        {
+          "model": "Solix C1000",
+          "measured_capacity_wh": 860,
+          "output_watts": 1800,
+          "gen2_output_watts": 2000,
+          "gen2_weight_lbs": "4 lbs less",
+          "price_usd": null,
+          "sale_price_usd": 400,
+          "rating": 66,
+          "award": "Best for Most People",
+          "features": [
+            "UltraFast charge option",
+            "Gen 2 improvements",
+            "Higher watt output",
+            "Improved portability",
+            "Faster charging",
+            "Higher power USB-C"
+          ],
+          "best_for": "General use, fast charging needs",
+          "note": "Updated to Gen 2 with better specs and lower price"
+        },
+        {
+          "model": "Solix C1000 Gen 2",
+          "output_watts": 2000,
+          "features": [
+            "Lower price than original",
+            "2000W output",
+            "4 lbs lighter",
+            "Faster charging",
+            "Higher USB-C output"
+          ]
+        },
+        {
+          "model": "521",
+          "capacity_wh": null,
+          "price_usd": null,
+          "rating": 43
+        }
+      ]
+    },
+    "Goal Zero": {
+      "market_position": "Premium Brand",
+      "product_range": "High-end",
+      "specialization": "Professional, Heavy-duty",
+      "key_products": [
+        {
+          "model": "Yeti 1500X",
+          "capacity_wh": null,
+          "price_usd": null,
+          "rating": 69
+        },
+        {
+          "model": "Yeti 700",
+          "capacity_wh": null,
+          "price_usd": null,
+          "rating": 58
+        }
+      ],
+      "positioning": "Premium pricing, professional-grade equipment"
+    }
+  },
+  "price_segments": {
+    "budget_under_200": {
+      "range": "< $200",
+      "target_customers": "Casual users, phone charging, emergency backup",
+      "typical_capacity": "200-300Wh",
+      "brands": ["Jackery Explorer 300", "EcoFlow River 3"]
+    },
+    "mid_range_200_500": {
+      "range": "$200-500",
+      "target_customers": "Camping, road trips, multiple devices",
+      "typical_capacity": "500-1000Wh",
+      "brands": ["Anker Solix C1000", "Bluetti AC70", "EcoFlow River 2 Pro"]
+    },
+    "premium_500_1000": {
+      "range": "$500-1000",
+      "target_customers": "Serious campers, extended off-grid",
+      "typical_capacity": "1000-2000Wh",
+      "brands": ["Jackery Explorer 1000 Plus", "Bluetti Elite 100 V2"]
+    },
+    "high_end_over_1000": {
+      "range": "> $1000",
+      "target_customers": "Home backup, RV, professional use",
+      "typical_capacity": "2000Wh+",
+      "brands": ["Jackery Explorer 2000 Plus", "EcoFlow DELTA Pro 3", "Goal Zero Yeti"]
+    }
+  },
+  "market_trends_2026": {
+    "battery_technology": "LiFePO4 batteries becoming standard for longevity and safety",
+    "expandability": "Modular and expandable systems trending",
+    "fast_charging": "Ultra-fast charging capabilities (80% in 45 minutes)",
+    "smart_features": "AI assistants and smart home integration",
+    "solar_integration": "Enhanced solar panel compatibility and input",
+    "home_backup": "Growing segment for whole-home backup solutions"
+  },
+  "key_features_comparison": {
+    "battery_types": {
+      "LiFePO4": ["Jackery Plus series", "Anker", "Most 2026 models"],
+      "benefits": ["Longer lifespan", "Safer chemistry", "More charge cycles"]
+    },
+    "charging_capabilities": {
+      "ultra_fast": ["Bluetti AC70 - 80% in 45min", "Anker UltraFast mode"],
+      "standard_fast": ["Jackery", "EcoFlow fast charging"],
+      "solar": "Universal across major brands"
+    },
+    "expandability": {
+      "modular": ["Jackery Plus series", "EcoFlow Delta Pro 3"],
+      "expansion_capacity": "Up to 48 kWh (EcoFlow)"
+    },
+    "smart_features": {
+      "ai_assistant": "EcoFlow",
+      "ups_mode": "EcoFlow River 3",
+      "home_integration": "EcoFlow Delta Pro 3",
+      "app_control": "Most major brands"
+    }
+  },
+  "competitive_analysis": {
+    "market_leaders": {
+      "jackery": {
+        "strengths": ["Brand recognition", "Product range", "Quality", "Expandability"],
+        "weaknesses": ["Premium pricing", "Weight on larger models"],
+        "market_share_estimate": "High - 30-40%"
+      },
+      "ecoflow": {
+        "strengths": ["Innovation", "Fast charging", "Smart features", "Home backup"],
+        "weaknesses": ["Newer brand", "Complex app ecosystem"],
+        "market_share_estimate": "Medium-High - 20-30%"
+      }
+    },
+    "specialists": {
+      "bluetti": {
+        "niche": "Fast charging",
+        "value_proposition": "Speed and affordability"
+      },
+      "anker": {
+        "niche": "Technology and portability",
+        "value_proposition": "Innovative charging solutions"
+      },
+      "goal_zero": {
+        "niche": "Premium professional",
+        "value_proposition": "Professional-grade reliability"
+      }
+    }
+  }
+}

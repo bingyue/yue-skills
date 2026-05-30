@@ -1,0 +1,10 @@
+# Copyright © 2026 姚金刚. All rights reserved.
+# Project: yao-geoflow-cli
+# Created by: 姚金刚
+# Date: 2026-05-16
+# X: https://x.com/yaojingang
+
+interface:
+  display_name: "Yao GEOFlow CLI"
+  short_description: "Operate an existing GEOFlow instance from the local geoflow CLI or Laravel API v1"
+  default_prompt: "Inspect GEOFlow catalog/material resources and perform material, task, job, or article operations through the local geoflow CLI or Laravel API v1, including Docker/API preflight checks."

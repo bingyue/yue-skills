@@ -1,0 +1,5 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-04-21T21:05	baseline	洗地机爆款详情页文案	-	92.4	baseline	初始评测	高密度标杆版，顶层价值和结果模块很强，复杂度略高	dry_run
+2026-04-21T21:30	opt-floorwasher-v2	洗地机爆款详情页文案	92.4	94.3	keep	检查点+实测表现	补强检查点机制、结构预览、对比板块成稿模板与最小输出要求	dry_run
+2026-04-22T10:40	opt-floorwasher-v3	洗地机爆款详情页文案	94.3	95.2	keep	爆款标准重评+成稿骨架	按超级爆款详情页标准重评，并补两套高密度成稿骨架样例，强化落地能力与压制感	dry_run
+2026-04-22T11:20	opt-floorwasher-v4	洗地机爆款详情页文案	95.2	96.0	keep	前置调研流程+实测表现	新增默认调研开场、进度同步、利弊说明与分层问卷，首轮推进更稳更像真实商务沟通	dry_run

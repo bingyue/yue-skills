@@ -1,0 +1,129 @@
+import os
+from pathlib import Path
+
+# ── 配置 ──────────────────────────────────────────────────────────────
+
+
+def normalize_api_url(raw_url):
+    """Accept either an OpenAI-compatible base URL or chat/completions endpoint."""
+    url = (raw_url or "https://api.openai.com/v1/chat/completions").rstrip("/")
+    if url.endswith("/chat/completions"):
+        return url
+    return f"{url}/chat/completions"
+
+
+def env_int(name, default, *, minimum=None):
+    """Read an integer env var; ignore malformed values instead of crashing import."""
+    raw = os.environ.get(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        value = int(raw)
+    except (TypeError, ValueError):
+        return default
+    if minimum is not None:
+        value = max(minimum, value)
+    return value
+
+
+def env_bool(name, default=False):
+    """Read common boolean env var forms."""
+    raw = os.environ.get(name)
+    if raw is None or raw == "":
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def env_float(name, default, *, minimum=None):
+    """Read a float env var; ignore malformed values instead of crashing import."""
+    raw = os.environ.get(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        return default
+    if minimum is not None:
+        value = max(minimum, value)
+    return value
+
+
+CONFIG = {
+    "api_url": normalize_api_url(os.environ.get("OPENAI_API_URL")),
+    "api_key": os.environ.get("OPENAI_API_KEY", ""),
+    "vlm_model": os.environ.get("OPENAI_MODEL", "doubao-seed-2-0-lite-260428"),
+    "asr_bin": os.environ.get("ASR_BIN", "local_transcribe"),
+    "asr_model_dir": os.environ.get("ASR_MODEL_DIR", ""),
+    "scene_threshold": 0.1,
+    "tts_engine": "auto",  # auto | indextts2 | edge-tts | say
+    "edge_tts_voice": "zh-CN-YunxiNeural",
+    "style_voices": {
+        "短剧": "zh-CN-YunxiNeural",
+        "电视剧": "zh-CN-XiaoxiaoNeural",
+        "电影": "zh-CN-YunjianNeural",
+        "纪录片": "zh-CN-YunyangNeural",
+        "科普视频": "zh-CN-XiaoyiNeural",
+    },
+    "say_voice": "Tingting",
+    "fps": 0,  # 0 = 自动（≤60s→2fps, ≤5min→1.5fps, >5min→1fps）
+    # TTS 语速（字符/秒），由校准得出。edge-tts YunxiNeural 约 3.5 字/秒
+    # 生成解说时使用 speech_rate * safety_margin 作为约束
+    "speech_rate": 3.5,
+    "speech_safety_margin": 0.85,  # 保守系数：TTS 实际语速有 ±20% 波动
+    "fade_ms": 300,  # TTS fade-in/fade-out 时长(ms)
+    "breath_ms": 600,  # 段间呼吸空间(ms)，原值 0ms
+    "ducking_mode": "fixed",  # fixed | sidechaincompress | none
+    "ducking_threshold": 0.15,
+    "ducking_ratio": 3,
+    "ducking_attack": 10,
+    "ducking_release": 300,
+    "ducking_level_sc": 2.0,
+    "ducking_makeup": 1.2,
+    "ducking_narr_weight": 1.5,
+    "ducking_orig_volume": 0.5,
+    "narration_mode": "zone",       # "zone": 大段解说+原声交替 | "scene": 逐场景解说
+    "zone_min_duration": 6.0,        # 解说区最短秒数，短于此的安静窗口不单独成区
+    "zone_merge_gap": 3.0,          # 相邻安静窗口间隔<此值时合并为一个解说区
+    "zone_ducking_volume": 0.12,    # 解说区原声音量（大幅压低）
+    "zone_fade_seconds": 0.5,      # 解说/原声切换的淡入淡出时长(秒)
+    "narration_delay_seconds": 1.5,  # 解说延迟放置秒数，让画面先出现再解说
+    "quiet_ducking_volume": 0.7,     # 解说在安静窗口时原声音量(scene模式)
+    "speech_ducking_volume": 0.2,    # 解说与对白重叠时原声音量(scene模式)
+    "silence_noise_threshold": "-25dB",  # ffmpeg silencedetect 噪声阈值
+    "silence_min_duration": 0.3,     # 静音最短持续秒数
+    "quiet_window_min": 1.0,         # 可放解说的安静窗口最短秒数
+    "silence_merge_gap": 0.5,        # 相邻静音段间隔<此值时合并
+    "scene_merge_min": 4.0,         # 场景合并最短时长，<此值的场景合并到相邻场景
+    "temporal_gap_min": 8.0,        # 长场景中最小空白间隔秒数（触发追加解说）
+    "context_info": "",              # 额外上下文（节目名、角色名等）
+    "tts_dynamic_params": True,  # 启用动态语速调节
+    "vlm_workers": env_int("VLM_WORKERS", 8, minimum=1),  # VLM 并行分析线程数
+    "tts_workers": env_int("TTS_WORKERS", 4, minimum=1),  # TTS 并行合成线程数
+    "fill_workers": env_int("FILL_WORKERS", 4, minimum=1),  # 填充解说并行 API 线程数
+    "tts_timeout": env_int("TTS_TIMEOUT", 90, minimum=1),  # 单段 TTS 命令超时秒数
+    "tts_retries": env_int("TTS_RETRIES", 3, minimum=1),  # 单段 TTS 失败重试次数
+    "allow_partial_tts": env_bool("ALLOW_PARTIAL_TTS", False),
+    "edit_mode": os.environ.get("EDIT_MODE", "full"),  # full | cut
+    "target_duration": os.environ.get("TARGET_DURATION", ""),  # cut 模式目标成片时长，如 10m
+    "clip_padding": env_float("CLIP_PADDING", 0.0, minimum=0.0),  # cut 模式片段两端扩展秒数
+    "allow_clip_overlap": env_bool("ALLOW_CLIP_OVERLAP", False),  # cut 模式是否允许重复/重叠使用原片
+    "skip_narrative_analysis": True,  # 跳过叙事结构分析（省57-130s，对质量影响极小）
+    "burn_subtitles": False,  # 烧录字幕到视频（需要重编码）
+    "force_video_reencode": env_bool("FORCE_VIDEO_REENCODE", False),  # 组装时重编码视频，修复部分容器时间戳问题
+    "subtitle_font_name": os.environ.get("SUBTITLE_FONT_NAME", "Arial"),
+    "subtitle_font_size": env_int("SUBTITLE_FONT_SIZE", 42, minimum=8),
+    "subtitle_primary_color": os.environ.get("SUBTITLE_PRIMARY_COLOR", "&H00FFFFFF"),
+    "subtitle_outline_color": os.environ.get("SUBTITLE_OUTLINE_COLOR", "&H00000000"),
+    "subtitle_outline": env_float("SUBTITLE_OUTLINE", 2.0, minimum=0.0),
+    "subtitle_shadow": env_float("SUBTITLE_SHADOW", 1.0, minimum=0.0),
+    "subtitle_margin_v": env_int("SUBTITLE_MARGIN_V", 48, minimum=0),
+    "subtitle_margin_l": env_int("SUBTITLE_MARGIN_L", 40, minimum=0),
+    "subtitle_margin_r": env_int("SUBTITLE_MARGIN_R", 40, minimum=0),
+    "subtitle_alignment": env_int("SUBTITLE_ALIGNMENT", 2, minimum=1),
+    "subtitle_max_chars": env_int("SUBTITLE_MAX_CHARS", 20, minimum=6),
+    "subtitle_play_res_x": env_int("SUBTITLE_PLAY_RES_X", 1280, minimum=1),
+    "subtitle_play_res_y": env_int("SUBTITLE_PLAY_RES_Y", 720, minimum=1),
+}
+
+SCRIPT_DIR = Path(__file__).parent
+PROMPTS_DIR = SCRIPT_DIR.parent / "references"

@@ -1,0 +1,30 @@
+# Copyright © 2026 姚金刚. All rights reserved.
+# Project: yao-geoflow-cli
+# Created by: 姚金刚
+# Date: 2026-05-16
+# X: https://x.com/yaojingang
+
+interface:
+  display_name: "Yao GEOFlow CLI"
+  short_description: "Operate an existing GEOFlow instance from the local geoflow CLI or Laravel API v1"
+  default_prompt: "Use $yao-geoflow-cli to operate an existing GEOFlow system through the local geoflow CLI or Laravel API v1: inspect catalog/material data, create or manage materials, tasks, jobs, drafts, reviews, published articles, and run Docker/API preflight checks."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"

@@ -1,0 +1,5 @@
+{
+  "_comment": "11 模型官方页面 hash baseline。首次 CI 运行会自动填充(--rebaseline)。维护者也可手动校准。",
+  "_updated": "2026-05-25",
+  "_note": "实际 hash 值会在第一次 GitHub Action 跑完后填充。这里留空表示等待初始化。"
+}

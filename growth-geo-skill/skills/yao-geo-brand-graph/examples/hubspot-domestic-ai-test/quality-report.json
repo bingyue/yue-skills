@@ -1,0 +1,65 @@
+{
+  "skill_id": "yao-geo-brand-graph",
+  "generated_at": "2026-05-21T08:52:34",
+  "status": "pass",
+  "issues": [],
+  "warnings": [],
+  "checks": {
+    "entity_count": 27,
+    "relation_count": 21,
+    "evidence_count": 11,
+    "core_entity_types_present": [
+      "产品",
+      "功能",
+      "品牌",
+      "地点",
+      "场景",
+      "技术",
+      "时间",
+      "服务",
+      "案例",
+      "用户",
+      "行业",
+      "证据"
+    ],
+    "platform_test_scenario_count": 5,
+    "enriched_section_count": 10,
+    "enriched_sections_required": [
+      "权威参考与适用边界",
+      "系统分析维度矩阵",
+      "来源覆盖矩阵",
+      "真实数据来源核验",
+      "实体覆盖矩阵",
+      "关系审计矩阵",
+      "Schema 与页面正文一致性",
+      "内容资产对齐计划",
+      "国内 AI 平台监测闭环",
+      "分析完整性自检清单"
+    ],
+    "source_validation_count": 11,
+    "source_validation_reachable_count": 11,
+    "four_format_outputs_checked": true,
+    "html_sticky_nav_present": true,
+    "html_overflow_protection_present": true,
+    "kami_palette_present": true,
+    "report_layout_profile": "kami-paper-long-doc",
+    "docx_profile": {
+      "table_count": 18,
+      "auto_table_count": 0,
+      "max_grid_width": 14400,
+      "content_width": 15398,
+      "layout_safety_margin": 998,
+      "manual_break_count": 479
+    },
+    "pdf_profile": {
+      "pages": 22,
+      "text_chars": 24272
+    },
+    "file_sizes": {
+      "markdown": 43018,
+      "html": 58768,
+      "pdf": 370139,
+      "docx": 26168
+    }
+  }
+}

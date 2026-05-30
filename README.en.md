@@ -7,7 +7,7 @@
 #### A practical, external-facing skills collection: research · content · visuals · distribution
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-39-10B981?style=for-the-badge)](#-skill-categories)
+[![Skills](https://img.shields.io/badge/Skills-94-10B981?style=for-the-badge)](#-skill-categories)
 [![Prompts](https://img.shields.io/badge/Prompts-1-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -145,6 +145,47 @@ e.g. `diagram-svg-generator`, `publish-wechat-official`, `image-generate-multiap
 |---|---|---|
 | `xhs-cards-legacy` | Deprecated | → `social-image-cards` |
 | `image-generate-legacy` | Deprecated | → `image-generate-multiapi` |
+
+---
+
+### G. Extended Skill Packs (New Migration on 2026-05-30)
+
+> First-round naming normalization is completed in this batch: `gr-*` is unified to `growth-*`, and selected abbreviated `wps-*` names are expanded into clearer 2-part/3-part names.
+
+| Source | Count | Notes | Directory Index |
+|---|---:|---|---|
+| `archive/gingiris-skills/skills` | 12 | Growth / SEO / content distribution workflows | `growth-research`, `growth-aso-optimizer`, `growth-b2b-engine`, `growth-seo-backlinks`, `growth-blog-writer`, `growth-competitor-intel`, `growth-geo-citations`, `growth-oss-marketing`, `growth-producthunt-launch`, `growth-seo-monitor`, `growth-social-insights`, `growth-user-interview` |
+| `archive/influencer-marketing-skill` | 1 | Influencer marketing specialized skill | `influencer-marketing-skill` |
+| `archive/wps-skills/skills` | 42 | WPS office automation skill suite | All `wps-*` directories (e.g. `wps-ppt-generator`, `wps-data-clean`, `wps-proofread`, `wps-vlookup`) |
+| `archive/text-check-skill` | 0 (already exists) | Same directory name already present; skipped to avoid overwrite | `text-check-skill` |
+| `archive/awesome-amazon-ec-skills` | 0 | No `SKILL.md` directories detected | - |
+| `archive/common-skills` | 0 | No `SKILL.md` directories detected | - |
+
+---
+
+#### G.1 Naming Normalization Map (Current Round)
+
+| Old Name | New Name |
+|---|---|
+| `gr` | `growth-research` |
+| `gr-aso` | `growth-aso-optimizer` |
+| `gr-b2b-growth` | `growth-b2b-engine` |
+| `gr-backlinks` | `growth-seo-backlinks` |
+| `gr-blog-post` | `growth-blog-writer` |
+| `gr-competitor` | `growth-competitor-intel` |
+| `gr-geo-cite` | `growth-geo-citations` |
+| `gr-oss-marketing` | `growth-oss-marketing` |
+| `gr-ph-launch` | `growth-producthunt-launch` |
+| `gr-seo-patrol` | `growth-seo-monitor` |
+| `gr-social-distill` | `growth-social-insights` |
+| `gr-user-interview` | `growth-user-interview` |
+| `wps-cn-calendar` | `wps-chinese-calendar` |
+| `wps-data-viz` | `wps-data-visualization` |
+| `wps-gongwen` | `wps-official-doc` |
+| `wps-i18n` | `wps-localization-i18n` |
+| `wps-jsa-macro` | `wps-js-macro` |
+| `wps-ppt-gen` | `wps-ppt-generator` |
+| `wps-resume-cn` | `wps-resume-chinese` |
 
 ---
 
