@@ -9,7 +9,7 @@
 [English](./README.en.md) · 中文
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-84+-10B981?style=flat-square)](#-技能分类)
+[![Skills](https://img.shields.io/badge/Skills-96+-10B981?style=flat-square)](#-技能分类)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Ready-D97706?style=flat-square&logo=anthropic)](https://claude.ai/code)
 [![Codex](https://img.shields.io/badge/Codex-Ready-10B981?style=flat-square&logo=openai)](https://openai.com/codex)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=flat-square)](https://agentskills.io)
@@ -97,6 +97,7 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 | [`ecom-visual-copy`](./ecom-visual-copy) | 电商主图+详情页文案设计 SOP |
 | [`ecom-gpt-image2`](./ecom-gpt-image2) | GPT-Image-2 电商产品图生成（25 个高质量模板） |
 | [`ecom-review-mind`](./ecom-review-mind) | 电商/消费品用户评论三层结构化分析（ABSA/痛点/推荐指数） |
+| [`ecom-review-monitor`](./ecom-review-monitor) | 电商评论舆情监控：差评预警/竞品挖掘/情感分析/周报输出 |
 | [`ecom-amazon-visual`](./ecom-amazon-visual) | 亚马逊 Listing 视觉架构设计 |
 | [`ecom-douyin-drama`](./ecom-douyin-drama) | 抖音剧情带货脚本生成（融合影视美术与转化设计） |
 | [`ecom-ai-tryon`](./ecom-ai-tryon) | AI 虚拟试穿 Agent（上传服装+人物即可试穿预览） |
@@ -229,9 +230,15 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 ### 📊 数据分析与可视化
 
-> CSV/Excel 数据到洞察报告，SQL 优化，A/B 测试，业务指标追踪。（**缺失方向，待补充本地 Skill**）
+> CSV/Excel 数据到洞察报告，销售漏斗，电商看板，业务指标追踪。
 
-*当前库内暂无专项 Skill，以下为 GitHub 热门推荐：*
+| Skill | 说明 |
+|---|---|
+| [`sales-funnel-analyzer`](./sales-funnel-analyzer) | 销售漏斗转化分析：各阶段转化率/流失点识别/行业基准对比/优化建议 |
+| [`ecom-data-dashboard`](./ecom-data-dashboard) | 电商经营看板：GMV/转化率/客单价/复购率/ROI，输出 HTML 看板或 Markdown 周报 |
+| [`csv-report-generator`](./csv-report-generator) | 通用 CSV 智能报告：自动识别数据类型，生成统计摘要+洞察+图表建议 |
+
+*以下为社区热门推荐，可直接安装：*
 
 | 仓库 | Stars | 说明 |
 |---|---:|---|
@@ -247,9 +254,14 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 ### 🎙️ 音频与播客
 
-> 音频转录、播客生成、会议纪要，语音内容处理全链路。（**缺失方向，待补充本地 Skill**）
+> 会议录音转纪要、播客转文章，语音内容处理全链路。
 
-*当前库内暂无专项 Skill，以下为 GitHub 热门推荐：*
+| Skill | 说明 |
+|---|---|
+| [`meeting-transcript-notes`](./meeting-transcript-notes) | 会议录音/字幕/文字稿 → 结构化纪要（决议/待办/待定，含负责人与截止时间） |
+| [`audio-to-article`](./audio-to-article) | 播客/字幕/演讲录音 → 可读文章，去赘词补结构，适配公众号/博客/LinkedIn |
+
+*以下为社区热门推荐，可直接安装：*
 
 | 仓库 | Stars | 说明 |
 |---|---:|---|
@@ -343,7 +355,7 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 ### 💼 职场、办公与工程治理
 
-> WPS 办公自动化、飞书协作、求职招聘、会话知识同步。
+> WPS 办公自动化、飞书协作、求职招聘、合规、私域、B2B 内容。
 
 | Skill | 说明 |
 |---|---|
@@ -353,6 +365,12 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 | [`workflow-neat-sync`](./workflow-neat-sync) | 会话收尾知识同步（文档/CLAUDE.md/Agent 记忆三层对齐） |
 | [`job-boss-auto`](./job-boss-auto) | Boss 直聘自动求职（隐身搜索→多 Agent 匹配→投递） |
 | [`job-hunter`](./job-hunter) | 定时求职助手（自动发现/筛选/记录合适岗位） |
+| [`job-boss-brief`](./job-boss-brief) | Boss 直聘每日招聘初筛简报 |
+| [`cn-compliance-check`](./cn-compliance-check) | 中国合规一体化检查：广告法极限词/敏感词/医疗违禁词，输出风险分级报告 |
+| [`wecom-private-domain`](./wecom-private-domain) | 企业微信私域运营：群 SOP/朋友圈策划/用户分层/关键词回复/SCRM 策略 |
+| [`b2b-content-suite`](./b2b-content-suite) | B2B 内容营销套件：LinkedIn 文章/白皮书/客户案例/行业报告摘要 |
+| [`video-comment-ops`](./video-comment-ops) | 视频评论区运营：评论分类/差评处理/回复模板/口碑管理 SOP |
+| [`brand-visual-ai`](./brand-visual-ai) | 品牌视觉 AI 全流程：品牌叙事→Logo→设计系统→交付物（8阶段） |
 
 **WPS 办公自动化（42 项，按场景取用）：**
 
@@ -436,29 +454,39 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 ## 🗺️ ROADMAP
 
-### v0.2（进行中）
+### ✅ v1.0（2026.05 已完成）
 
-- [ ] 统一所有 Skill 的 `SKILL.md` 描述格式（中英双语 + 使用场景 + 依赖说明）
-- [ ] 为每个 Skill 添加 `examples/` 实战示例目录
-- [ ] 完善 wps-* 42 个技能的独立说明文档
-- [ ] 补充 ecom-product-image 的电商场景示例图
-- [ ] 新增：`ecom-review-monitor`（电商评论舆情监控）
-- [ ] **新增 📊 数据分析方向**：`sales-funnel-analyzer`、`ecom-data-dashboard`、`csv-report-generator`
-- [ ] **新增 🎙️ 音频播客方向**：`meeting-transcript-notes`（会议录音→纪要）、`audio-to-article`（播客→文章）
+**核心库建设**
+- [x] 96 个 Skill，覆盖电商/社媒/视频/写作/研究/数据/合规/办公 8 大方向
+- [x] 全库命名标准化（两段式/三段式 kebab-case，65 项重命名）
+- [x] 单一根目录 `.gitignore`（整合 51 个嵌套文件）
+- [x] 完整中英文 README，含安装指南/分类索引/致谢
 
-### v0.3（规划中）
+**新增 Skill（V1.0 阶段）**
+- [x] `ecom-review-monitor` — 电商评论舆情监控与竞品差评挖掘
+- [x] `sales-funnel-analyzer` — 销售漏斗转化率分析
+- [x] `ecom-data-dashboard` — 电商数据看板（GMV/转化/复购）
+- [x] `csv-report-generator` — 通用 CSV 智能报告生成
+- [x] `meeting-transcript-notes` — 会议录音/字幕 → 结构化纪要
+- [x] `audio-to-article` — 播客/音频字幕 → 可读文章
+- [x] `cn-compliance-check` — 广告法/敏感词/医疗合规一体化检查
+- [x] `wecom-private-domain` — 企业微信私域运营全流程套件
+- [x] `b2b-content-suite` — B2B 内容营销（LinkedIn/白皮书/案例）
+- [x] `video-comment-ops` — 视频评论区运营与差评处理
+- [x] `brand-visual-ai` — 品牌视觉 AI 套件（基于 b1rdmania/claude-brand-skills，8 阶段）
 
-- [ ] 中国合规体系：广告法/敏感词/医疗合规检查一体化 Skill
-- [ ] **私域运营系列**：企业微信自动化/群助手/朋友圈运营/SCRM 集成
-- [ ] B2B 内容营销套件：LinkedIn 文章 + 白皮书 + 案例故事
-- [ ] AI 视频评论区运营：自动回复/关键词监控/差评处理
-- [ ] **品牌视觉 AI 套件**：基于 `b1rdmania/claude-brand-skills` 汉化移植（8阶段全流程）
-- [ ] 多语言本地化：将核心 Skill 的提示词翻译为英/日/韩版本
+---
 
-### v1.0（长期目标）
+### v1.1（规划中）
 
-- [ ] 提供 Skill 自动测试框架（可验证 SKILL.md 描述与实际行为是否一致）
+- [ ] 统一核心 Skill 的 `SKILL.md` 格式（重点分类补全触发词和示例）
 - [ ] 建立"Skill 组合模板"（按业务场景打包的一键安装套件）
+- [ ] 补充数据分析类 Skill 的实战 CSV 示例
+- [ ] 多语言本地化：将 ecom-* 核心 Skill 提示词翻译为英文版
+
+### v2.0（长期目标）
+
+- [ ] Skill 自动测试框架（验证 SKILL.md 描述与实际行为一致性）
 - [ ] 开放 Skill 投稿机制与质量审核 SOP
 - [ ] 与主流 Agent 平台（Coze/Dify/FastGPT）打通安装接口
 - [ ] **生态对接**：接入 [claudskills.com](https://claudskills.com) 公开目录（69K+ Skills 索引），提高可发现性
