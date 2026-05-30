@@ -1,0 +1,91 @@
+{
+  "agents": [
+    {
+      "id": "ecommerce_agent",
+      "name": "电商分析主控",
+      "soul": "souls/ecommerce_agent.md",
+      "center": "电商爆款分析",
+      "role": "电商数据分析全流程编排",
+      "kpi": "商品采集 → 热度计算 → 报表生成 全链路完成率",
+      "center_node": true,
+      "description": "电商爆款分析主控 Agent，负责调度全流程：拉取商品数据 → 热度评分计算 → 生成 Markdown 分析报表",
+      "permissions": ["read", "write", "delegate", "broadcast"],
+      "skills": [
+        "fetch-products",
+        "hot-score",
+        "report-generator"
+      ],
+      "agentToAgent": {
+        "canCallAgents": [
+          "product_fetcher",
+          "hot_score_analyzer",
+          "report_generator"
+        ],
+        "canBeCalledBy": [],
+        "priority": 1
+      },
+      "memory": { "enabled": true, "scope": "global", "persist": true },
+      "config": { "maxRecursion": 3, "responseFormat": "structured", "language": "zh-CN" }
+    },
+
+    {
+      "id": "product_fetcher",
+      "name": "商品采集器",
+      "soul": "souls/product_fetcher.md",
+      "center": "电商爆款分析",
+      "role": "商品数据采集",
+      "kpi": "商品数据完整采集率",
+      "center_node": false,
+      "description": "负责从 Fake Store API 拉取标准化商品数据，包含标题、价格、类目、评分，结构化输出供后续分析",
+      "permissions": ["read"],
+      "skills": ["fetch-products"],
+      "agentToAgent": {
+        "canCallAgents": [],
+        "canBeCalledBy": ["ecommerce_agent"],
+        "priority": 2
+      },
+      "memory": { "enabled": true, "scope": "session", "persist": false },
+      "config": { "maxRecursion": 1, "responseFormat": "raw", "language": "zh-CN" }
+    },
+
+    {
+      "id": "hot_score_analyzer",
+      "name": "爆款评分器",
+      "soul": "souls/hot_score_analyzer.md",
+      "center": "电商爆款分析",
+      "role": "热度评分计算",
+      "kpi": "评分计算准确率 & 排序有效性",
+      "center_node": false,
+      "description": "接收商品列表，执行热度评分计算（score = rating.rate × rating.count），按分数降序排列，输出爆款候选列表",
+      "permissions": ["read", "write"],
+      "skills": ["hot-score"],
+      "agentToAgent": {
+        "canCallAgents": [],
+        "canBeCalledBy": ["ecommerce_agent"],
+        "priority": 2
+      },
+      "memory": { "enabled": true, "scope": "session", "persist": false },
+      "config": { "maxRecursion": 1, "responseFormat": "structured", "language": "zh-CN" }
+    },
+
+    {
+      "id": "report_generator",
+      "name": "报表生成器",
+      "soul": "souls/report_generator.md",
+      "center": "电商爆款分析",
+      "role": "Markdown 报表生成",
+      "kpi": "报表生成完整率 & 格式规范率",
+      "center_node": false,
+      "description": "将爆款评分结果转换为 Markdown 格式分析报表，支持按类目筛选、Top-N 展示、价格区间分析",
+      "permissions": ["read", "write"],
+      "skills": ["report-generator"],
+      "agentToAgent": {
+        "canCallAgents": [],
+        "canBeCalledBy": ["ecommerce_agent"],
+        "priority": 3
+      },
+      "memory": { "enabled": false },
+      "config": { "maxRecursion": 1, "responseFormat": "markdown", "language": "zh-CN" }
+    }
+  ]
+}

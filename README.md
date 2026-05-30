@@ -89,20 +89,20 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`1click-ecom-detailpage`](./1click-ecom-detailpage) | 一键生成跨境电商高转化 PDP 详情页与主图 |
+| [`ecom-pdp-one-click`](./ecom-pdp-one-click) | 一键生成跨境电商高转化 PDP 详情页与主图 |
 | [`ecom-product-image`](./ecom-product-image) | 电商全场景图片生成（主图/详情页/Banner，25 种模板） |
 | [`ecom-claw`](./ecom-claw) | 电商选品抓取与数据分析 |
-| [`ecommerce-image-suite`](./ecommerce-image-suite) | 电商套图生成（主图/卖点图/场景图/模特图） |
-| [`ecommerce-product-research-skills`](./ecommerce-product-research-skills) | 亚马逊精细化选品调研报告生成 |
-| [`ecommerce-visual-copywriting-skill`](./ecommerce-visual-copywriting-skill) | 电商主图+详情页文案设计 SOP |
-| [`gpt-image2-ecommerce`](./gpt-image2-ecommerce) | GPT-Image-2 电商产品图生成（25 个高质量模板） |
-| [`ReviewMind-Skills`](./ReviewMind-Skills) | 电商/消费品用户评论三层结构化分析（ABSA/痛点/推荐指数） |
-| [`amazon-visual-architect-skill`](./amazon-visual-architect-skill) | 亚马逊 Listing 视觉架构设计 |
-| [`douyin-drama-commerce-skill`](./douyin-drama-commerce-skill) | 抖音剧情带货脚本生成（融合影视美术与转化设计） |
-| [`shop-tryon-skill`](./shop-tryon-skill) | AI 虚拟试穿 Agent（上传服装+人物即可试穿预览） |
-| [`influencer-marketing-skill`](./influencer-marketing-skill) | 海外红人营销全流程（竞品分析/Brief撰写/红人建联/数据复盘） |
-| [`influencer-outreach-skill`](./influencer-outreach-skill) | KOL 达人投放管理工作流（话题生成→达人搜索→建联发送） |
-| [`pugongying-skill`](./pugongying-skill) | 蒲公英 KOL 达人筛选工具 |
+| [`ecom-image-suite`](./ecom-image-suite) | 电商套图生成（主图/卖点图/场景图/模特图） |
+| [`ecom-product-research`](./ecom-product-research) | 亚马逊精细化选品调研报告生成 |
+| [`ecom-visual-copy`](./ecom-visual-copy) | 电商主图+详情页文案设计 SOP |
+| [`ecom-gpt-image2`](./ecom-gpt-image2) | GPT-Image-2 电商产品图生成（25 个高质量模板） |
+| [`ecom-review-mind`](./ecom-review-mind) | 电商/消费品用户评论三层结构化分析（ABSA/痛点/推荐指数） |
+| [`ecom-amazon-visual`](./ecom-amazon-visual) | 亚马逊 Listing 视觉架构设计 |
+| [`ecom-douyin-drama`](./ecom-douyin-drama) | 抖音剧情带货脚本生成（融合影视美术与转化设计） |
+| [`ecom-ai-tryon`](./ecom-ai-tryon) | AI 虚拟试穿 Agent（上传服装+人物即可试穿预览） |
+| [`influencer-marketing`](./influencer-marketing) | 海外红人营销全流程（竞品分析/Brief撰写/红人建联/数据复盘） |
+| [`influencer-outreach`](./influencer-outreach) | KOL 达人投放管理工作流（话题生成→达人搜索→建联发送） |
+| [`influencer-pugongying`](./influencer-pugongying) | 蒲公英 KOL 达人筛选工具 |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
@@ -121,14 +121,14 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`xiaohongshu-ops-skill`](./xiaohongshu-ops-skill) | 小红书全链路运营（账号定位/选题/内容生产/发布/复盘） |
-| [`Auto-Redbook-Skills`](./Auto-Redbook-Skills) | 小红书笔记素材自动创作 |
-| [`XiaohongshuSkills`](./XiaohongshuSkills) | 小红书图文/视频自动发布 + 内容检索与互动 |
+| [`xhs-ops-workflow`](./xhs-ops-workflow) | 小红书全链路运营（账号定位/选题/内容生产/发布/复盘） |
+| [`xhs-auto-creator`](./xhs-auto-creator) | 小红书笔记素材自动创作 |
+| [`xhs-publish-suite`](./xhs-publish-suite) | 小红书图文/视频自动发布 + 内容检索与互动 |
 | [`xhs-social-card`](./xhs-social-card) | 归藏风格小红书图文卡片 + 公众号封面图对生成 |
 | [`social-account-doctor`](./social-account-doctor) | 自媒体账号对标拆解与仿写闭环（小红书/抖音/快手/视频号） |
-| [`Viral_Writer_Skill`](./Viral_Writer_Skill) | 多平台爆款文案创作（公众号/小红书/抖音），含配图指导 |
-| [`skills-douyin-text-to-text`](./skills-douyin-text-to-text) | 抖音分享链接解析 → 视频下载 → FunASR 语音转文字 |
-| [`social-image-cards`](./social-image-cards) | 社媒图文卡片系列生成 |
+| [`write-viral-creator`](./write-viral-creator) | 多平台爆款文案创作（公众号/小红书/抖音），含配图指导 |
+| [`video-douyin-transcribe`](./video-douyin-transcribe) | 抖音分享链接解析 → 视频下载 → FunASR 语音转文字 |
+| [`image-social-card`](./image-social-card) | 社媒图文卡片系列生成 |
 | [`publish-wechat-official`](./publish-wechat-official) | 发布到微信公众号（API/草稿箱） |
 | [`publish-weibo-post`](./publish-weibo-post) | 发布到微博（文字/图文/视频） |
 | [`publish-x-post`](./publish-x-post) | 发布到 X/Twitter（正文/长文章） |
@@ -151,12 +151,12 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 | Skill | 说明 |
 |---|---|
 | [`writing-khazix-style`](./writing-khazix-style) | 卡兹克风格公众号长文写作（固定语气/禁忌/四层自查） |
-| [`Viral_Writer_Skill`](./Viral_Writer_Skill) | 多平台爆款文案创作 |
-| [`markdown-format-polish`](./markdown-format-polish) | Markdown 结构化整理与排版优化 |
-| [`markdown-html-wechat`](./markdown-html-wechat) | Markdown 转微信公众号兼容 HTML |
-| [`text-check-skill`](./text-check-skill) | 敏感词扫描与合规检查 |
-| [`text-translate-workflow`](./text-translate-workflow) | 多模式翻译：快翻/常规/精修三档 |
-| [`ecommerce-visual-copywriting-skill`](./ecommerce-visual-copywriting-skill) | 电商图文文案 SOP |
+| [`write-viral-creator`](./write-viral-creator) | 多平台爆款文案创作 |
+| [`write-md-polish`](./write-md-polish) | Markdown 结构化整理与排版优化 |
+| [`write-md-wechat`](./write-md-wechat) | Markdown 转微信公众号兼容 HTML |
+| [`write-text-check`](./write-text-check) | 敏感词扫描与合规检查 |
+| [`write-translate`](./write-translate) | 多模式翻译：快翻/常规/精修三档 |
+| [`ecom-visual-copy`](./ecom-visual-copy) | 电商图文文案 SOP |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
@@ -176,16 +176,16 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 | Skill | 说明 |
 |---|---|
 | [`image-generate-multiapi`](./image-generate-multiapi) | 多模型统一文生图（GPT-Image/Gemini/Azure） |
-| [`danger-gemini-webapi`](./danger-gemini-webapi) | Gemini Web 图片与文本能力接入（逆向） |
-| [`article-cover-generator`](./article-cover-generator) | 文章封面图生成（5 维度风格） |
-| [`article-image-illustrator`](./article-image-illustrator) | 文章段落自动配图（位置识别+提示词生成） |
-| [`document-illustrator`](./document-illustrator) | 文档内容智能配图（封面+正文，风格锁定） |
-| [`logo-svg-generator`](./logo-svg-generator) | SVG Logo 与品牌展示图生成（12 种背景风格） |
-| [`visual-infographic-generator`](./visual-infographic-generator) | 专业信息图生成（21 种布局） |
-| [`diagram-svg-generator`](./diagram-svg-generator) | SVG 架构图/流程图/时序图（暗色主题） |
-| [`content-comic-generator`](./content-comic-generator) | 知识内容漫画生成（多风格） |
+| [`image-gemini-webapi`](./image-gemini-webapi) | Gemini Web 图片与文本能力接入（逆向） |
+| [`image-cover-gen`](./image-cover-gen) | 文章封面图生成（5 维度风格） |
+| [`image-para-illustrator`](./image-para-illustrator) | 文章段落自动配图（位置识别+提示词生成） |
+| [`image-doc-illustrator`](./image-doc-illustrator) | 文档内容智能配图（封面+正文，风格锁定） |
+| [`image-logo-svg`](./image-logo-svg) | SVG Logo 与品牌展示图生成（12 种背景风格） |
+| [`image-infographic`](./image-infographic) | 专业信息图生成（21 种布局） |
+| [`image-diagram-svg`](./image-diagram-svg) | SVG 架构图/流程图/时序图（暗色主题） |
+| [`image-comic-gen`](./image-comic-gen) | 知识内容漫画生成（多风格） |
 | [`image-compress-optimizer`](./image-compress-optimizer) | 图片压缩优化（WebP/PNG，自动降质） |
-| [`social-image-cards`](./social-image-cards) | 社媒图文卡片系列生成 |
+| [`image-social-card`](./image-social-card) | 社媒图文卡片系列生成 |
 | [`xhs-social-card`](./xhs-social-card) | 归藏风小红书图文卡片/公众号封面生成 |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
@@ -205,18 +205,18 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`youtube-video-clipper`](./youtube-video-clipper) | YouTube 视频智能剪辑 + 中英双语字幕烧录 |
-| [`youtube-transcript-extract`](./youtube-transcript-extract) | YouTube 字幕与封面提取 |
-| [`bilibili-subtitle-download-skill`](./bilibili-subtitle-download-skill) | B 站视频字幕下载 + LLM 高质量摘要 |
+| [`video-youtube-clip`](./video-youtube-clip) | YouTube 视频智能剪辑 + 中英双语字幕烧录 |
+| [`video-youtube-subtitle`](./video-youtube-subtitle) | YouTube 字幕与封面提取 |
+| [`video-bilibili-subtitle`](./video-bilibili-subtitle) | B 站视频字幕下载 + LLM 高质量摘要 |
 | [`video-wrapper-effects`](./video-wrapper-effects) | 访谈视频综艺特效（花字/卡片/人物条，4 种主题） |
-| [`seedance-video-prompt`](./seedance-video-prompt) | Seedance 2.0 产品动画提示词（4 种美学风格） |
-| [`dialogue-video-skill`](./dialogue-video-skill) | 对话视频生成与处理 |
-| [`jianying-editor-skill`](./jianying-editor-skill) | 剪映 AI 自动化剪辑封装（字幕/素材/动效/导出） |
-| [`script-to-video-skill`](./script-to-video-skill) | 文章/脚本 → OmiVoice TTS 配音 → 完整视频 |
-| [`video-storyboard-gen-skill`](./video-storyboard-gen-skill) | 视频分镜脚本生成（融合剧情结构与画面描述） |
-| [`promo-creator-skills`](./promo-creator-skills) | 产品宣传片制作总控（60-90 秒，从官网/截图到成片） |
-| [`AI-Animation-Skill`](./AI-Animation-Skill) | 科普内容 → 可视化 PPT 风格网页动画 |
-| [`skills-douyin-text-to-text`](./skills-douyin-text-to-text) | 抖音视频 → 语音转文字 |
+| [`video-seedance-prompt`](./video-seedance-prompt) | Seedance 2.0 产品动画提示词（4 种美学风格） |
+| [`video-dialogue`](./video-dialogue) | 对话视频生成与处理 |
+| [`video-jianying`](./video-jianying) | 剪映 AI 自动化剪辑封装（字幕/素材/动效/导出） |
+| [`video-script-to-film`](./video-script-to-film) | 文章/脚本 → OmiVoice TTS 配音 → 完整视频 |
+| [`video-storyboard`](./video-storyboard) | 视频分镜脚本生成（融合剧情结构与画面描述） |
+| [`video-promo-creator`](./video-promo-creator) | 产品宣传片制作总控（60-90 秒，从官网/截图到成片） |
+| [`ppt-html-animation`](./ppt-html-animation) | 科普内容 → 可视化 PPT 风格网页动画 |
+| [`video-douyin-transcribe`](./video-douyin-transcribe) | 抖音视频 → 语音转文字 |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
@@ -268,11 +268,11 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`slides-deck-generator`](./slides-deck-generator) | 演示页 / Slide 图片生成流程 |
-| [`html-ppt-guizang`](./html-ppt-guizang) | 网页横向翻页 PPT（杂志风/瑞士国际主义风，单 HTML） |
+| [`ppt-slides-gen`](./ppt-slides-gen) | 演示页 / Slide 图片生成流程 |
+| [`ppt-html-guizang`](./ppt-html-guizang) | 网页横向翻页 PPT（杂志风/瑞士国际主义风，单 HTML） |
 | [`ppt-image-generator`](./ppt-image-generator) | AI 生成 PPT 图片 + 可灵转场视频（Nano Banana） |
-| [`gpt-image2-ppt-skills`](./gpt-image2-ppt-skills) | GPT-Image-2 生成视觉精美 PPT 幻灯片 |
-| [`visual-style-ppt-skill`](./visual-style-ppt-skill) | 风格驱动 Slide 图片生成（Image 2） |
+| [`ppt-image2-gen`](./ppt-image2-gen) | GPT-Image-2 生成视觉精美 PPT 幻灯片 |
+| [`ppt-visual-style`](./ppt-visual-style) | 风格驱动 Slide 图片生成（Image 2） |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
@@ -291,15 +291,15 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`news-aihot-daily`](./news-aihot-daily) | AI 热点日报与动态检索（aihot.virxact.com） |
-| [`web-markdown-extract`](./web-markdown-extract) | 任意网页抓取转 Markdown |
-| [`danger-x-markdown-export`](./danger-x-markdown-export) | X/Twitter 内容转存 Markdown |
-| [`wechat-group-summary`](./wechat-group-summary) | 微信群聊记录摘要与群体画像 |
+| [`research-ai-news`](./research-ai-news) | AI 热点日报与动态检索（aihot.virxact.com） |
+| [`research-web-extract`](./research-web-extract) | 任意网页抓取转 Markdown |
+| [`research-x-export`](./research-x-export) | X/Twitter 内容转存 Markdown |
+| [`research-wechat-summary`](./research-wechat-summary) | 微信群聊记录摘要与群体画像 |
 | [`research-hv-analysis`](./research-hv-analysis) | 横纵分析法深度研究报告 |
-| [`last30days-skill-cn`](./last30days-skill-cn) | 中国 8 大平台近 30 天深度研究（微博/小红书/B站/知乎/抖音…） |
-| [`content-collector-skill`](./content-collector-skill) | 多平台内容采集（X/微信/即刻/Reddit） |
-| [`boss-daily-brief`](./boss-daily-brief) | Boss 直聘每日招聘初筛简报 |
-| [`text-translate-workflow`](./text-translate-workflow) | 多模式翻译（快翻/常规/精修） |
+| [`research-last30days`](./research-last30days) | 中国 8 大平台近 30 天深度研究（微博/小红书/B站/知乎/抖音…） |
+| [`research-content-collect`](./research-content-collect) | 多平台内容采集（X/微信/即刻/Reddit） |
+| [`job-boss-brief`](./job-boss-brief) | Boss 直聘每日招聘初筛简报 |
+| [`write-translate`](./write-translate) | 多模式翻译（快翻/常规/精修） |
 
 **来自 GitHub 的高价值 Skill 推荐（可直接安装）：**
 
@@ -347,12 +347,12 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | Skill | 说明 |
 |---|---|
-| [`feishu-bitable-skill`](./feishu-bitable-skill) | 飞书多维表格全生命周期管理（建表/CRUD/视图） |
-| [`lark-todo-skill`](./lark-todo-skill) | 飞书全平台待办扫描（8 源并行采集，按优先级汇总） |
+| [`lark-bitable`](./lark-bitable) | 飞书多维表格全生命周期管理（建表/CRUD/视图） |
+| [`lark-todo`](./lark-todo) | 飞书全平台待办扫描（8 源并行采集，按优先级汇总） |
 | [`lark-fashion-cockpit`](./lark-fashion-cockpit) | 女装电商运营驾驶舱（38 大能力，飞书 CLI 数字化方案） |
 | [`workflow-neat-sync`](./workflow-neat-sync) | 会话收尾知识同步（文档/CLAUDE.md/Agent 记忆三层对齐） |
-| [`boss-auto-job`](./boss-auto-job) | Boss 直聘自动求职（隐身搜索→多 Agent 匹配→投递） |
-| [`job-hunter-skill`](./job-hunter-skill) | 定时求职助手（自动发现/筛选/记录合适岗位） |
+| [`job-boss-auto`](./job-boss-auto) | Boss 直聘自动求职（隐身搜索→多 Agent 匹配→投递） |
+| [`job-hunter`](./job-hunter) | 定时求职助手（自动发现/筛选/记录合适岗位） |
 
 **WPS 办公自动化（42 项，按场景取用）：**
 
@@ -386,20 +386,20 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 |---|---:|---|
 | [`ecomm-ai-skills-hub`](./ecomm-ai-skills-hub) | 180+ | 电商 AI 技能大集合（tile.json 体系） |
 | [`xiaohongshu-skills`](./xiaohongshu-skills) | 139 | 小红书全场景技能包 |
-| [`ecommerce-detail-page-skills`](./ecommerce-detail-page-skills) | 11 | 电商详情页文案（母婴/美妆/食品/3C 等分品类） |
+| [`ecom-detail-page`](./ecom-detail-page) | 11 | 电商详情页文案（母婴/美妆/食品/3C 等分品类） |
 | [`system-prompt-skills`](./system-prompt-skills) | 15 | 系统提示词设计技能集（记忆/人格/安全/输出格式） |
-| [`videoclip-AI-skill`](./videoclip-AI-skill) | 6 | AI 视频剪辑技能包（字幕/剪口播/划重点） |
-| [`ai-video-skills`](./ai-video-skills) | 5 | AI 视频创作技能包（产品介绍/动画/特效） |
-| [`lanshu-awesome-ai-video-kit`](./lanshu-awesome-ai-video-kit) | 7 | 蓝书 AI 视频工具包（Seedance/Kling 系列） |
+| [`video-clip-ai`](./video-clip-ai) | 6 | AI 视频剪辑技能包（字幕/剪口播/划重点） |
+| [`video-ai-pack`](./video-ai-pack) | 5 | AI 视频创作技能包（产品介绍/动画/特效） |
+| [`video-lanshu-kit`](./video-lanshu-kit) | 7 | 蓝书 AI 视频工具包（Seedance/Kling 系列） |
 | [`xhs-claude-skills`](./xhs-claude-skills) | 4 | 小红书 Claude 技能包（发布/封面/批量/分析） |
 | [`obsidian-skills`](./obsidian-skills) | 5 | Obsidian 知识库管理技能包 |
 | [`axton-obsidian-visual-skills`](./axton-obsidian-visual-skills) | 3 | Obsidian 可视化（Canvas/Mermaid/Excalidraw） |
-| [`ai-ecommerce-agent-skills`](./ai-ecommerce-agent-skills) | 10 | 电商 AI Agent 技能包（含选股分析） |
+| [`ecom-agent-pack`](./ecom-agent-pack) | 10 | 电商 AI Agent 技能包（含选股分析） |
 | [`workflow-skill`](./workflow-skill) | 3 | 工作流平台技能包（Dify/Coze/ComfyUI） |
 | [`agent-skills`](./agent-skills) | 3 | 中国合规检查技能（广告/商务/电商合规） |
-| [`Bright-Data-MCP-Claude-Skill-deep-research`](./Bright-Data-MCP-Claude-Skill-deep-research) | 2 | Bright Data MCP 深度研究技能 |
-| [`amazon-alibaba-crossborder-skill-image-generator`](./amazon-alibaba-crossborder-skill-image-generator) | 2 | 亚马逊/阿里跨境图片生成器 |
-| [`MaxC-skills`](./MaxC-skills) | 1 | 每日销售摘要 |
+| [`research-brightdata`](./research-brightdata) | 2 | Bright Data MCP 深度研究技能 |
+| [`ecom-crossborder-image`](./ecom-crossborder-image) | 2 | 亚马逊/阿里跨境图片生成器 |
+| [`sales-daily-brief`](./sales-daily-brief) | 1 | 每日销售摘要 |
 | [`codex-ppt-skill`](./codex-ppt-skill) | 1 | Codex PPT 生成技能 |
 | [`video-recap`](./video-recap) | 1 | 视频内容回顾技能 |
 | [`seedance-prompt-skill`](./seedance-prompt-skill) | 1 | Seedance 提示词专项技能 |
@@ -410,27 +410,27 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 ## 🔗 推荐工作流
 
 ```
-研究选题        last30days-skill-cn / news-aihot-daily / research-hv-analysis
+研究选题        research-last30days / research-ai-news / research-hv-analysis
       ↓
-内容创作        writing-khazix-style / Viral_Writer_Skill / social-account-doctor
+内容创作        writing-khazix-style / write-viral-creator / social-account-doctor
       ↓
-视觉配图        article-image-illustrator / ecom-product-image / logo-svg-generator
+视觉配图        image-para-illustrator / ecom-product-image / image-logo-svg
       ↓
-格式适配        markdown-html-wechat / xhs-social-card / social-image-cards
+格式适配        write-md-wechat / xhs-social-card / image-social-card
       ↓
-多平台发布      publish-wechat-official / publish-weibo-post / publish-x-post / XiaohongshuSkills
+多平台发布      publish-wechat-official / publish-weibo-post / publish-x-post / xhs-publish-suite
       ↓
-效果复盘        ReviewMind-Skills / growth-seo-monitor / growth-social-insights
+效果复盘        ecom-review-mind / growth-seo-monitor / growth-social-insights
 ```
 
 | 场景 | 推荐链路 |
 |---|---|
-| 公众号生产 | `research-hv-analysis` → `writing-khazix-style` → `document-illustrator` → `markdown-html-wechat` → `publish-wechat-official` |
-| 小红书爆款 | `last30days-skill-cn` → `social-account-doctor` → `Viral_Writer_Skill` → `xhs-social-card` → `XiaohongshuSkills` |
-| 电商视觉链路 | `ecommerce-product-research-skills` → `ecom-product-image` → `ecommerce-visual-copywriting-skill` → `1click-ecom-detailpage` |
-| 视频内容处理 | `youtube-transcript-extract` → `youtube-video-clipper` → `video-wrapper-effects` → `skills-douyin-text-to-text` |
+| 公众号生产 | `research-hv-analysis` → `writing-khazix-style` → `image-doc-illustrator` → `write-md-wechat` → `publish-wechat-official` |
+| 小红书爆款 | `research-last30days` → `social-account-doctor` → `write-viral-creator` → `xhs-social-card` → `xhs-publish-suite` |
+| 电商视觉链路 | `ecom-product-research` → `ecom-product-image` → `ecom-visual-copy` → `ecom-pdp-one-click` |
+| 视频内容处理 | `video-youtube-subtitle` → `video-youtube-clip` → `video-wrapper-effects` → `video-douyin-transcribe` |
 | 增长 SEO | `growth-competitor-intel` → `growth-seo-backlinks` → `growth-blog-writer` → `growth-seo-monitor` |
-| 办公自动化 | `wps-data-clean` → `wps-data-visualization` → `wps-report-writer` → `lark-todo-skill` |
+| 办公自动化 | `wps-data-clean` → `wps-data-visualization` → `wps-report-writer` → `lark-todo` |
 
 ---
 
@@ -471,15 +471,15 @@ cp -r yue-skills/<skill-name> ~/.claude/skills/<skill-name>
 
 | 仓库 / 作者 | 贡献说明 |
 |---|---|
-| [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | 早期 Skill 结构规范与工具集（web-markdown-extract、youtube-transcript-extract 等核心工具链） |
+| [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | 早期 Skill 结构规范与工具集（research-web-extract、video-youtube-subtitle 等核心工具链） |
 | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | writing-khazix-style、research-hv-analysis 等写作与研究 Skill 灵感来源 |
 | [gingiris/gingiris-skills](https://github.com) | growth-* 系列 12 个增长策略 Skill（ASO/B2B/SEO/PH 发布等） |
-| [guizang PPT 系列](https://github.com) | html-ppt-guizang、xhs-social-card 等视觉风格 Skill |
+| [guizang PPT 系列](https://github.com) | ppt-html-guizang、xhs-social-card 等视觉风格 Skill |
 | [NanoBanana/PPT-Generator-Pro](https://github.com) | ppt-image-generator（AI 图片 PPT + 可灵转场视频方案） |
 | [lanshu-awesome-ai-video-kit](https://github.com) | Seedance/Kling 视频提示词技能包 |
 | [ecommerce-detail-page-skills](https://github.com) | 电商详情页文案分品类 Skill 体系 |
 | [buluslan/gpt-image2-ecommerce](https://github.com/buluslan/gpt-image2-ecommerce) | GPT-Image-2 电商图片 25 个高质量模板 |
-| [coolqoo/1click-ecom-detailpage](https://github.com/coolqoo/1click-ecom-detailpage) | 跨境电商一键详情页灵感与初步工作 |
+| [coolqoo/ecom-pdp-one-click](https://github.com/coolqoo/ecom-pdp-one-click) | 跨境电商一键详情页灵感与初步工作 |
 | [AgentSkills](https://agentskills.io) | Skill 标准规范与 SKILL.md 格式定义 |
 
 > 如果你的工作被收录但未被正确致谢，请开 Issue 告知，我会第一时间补充。
